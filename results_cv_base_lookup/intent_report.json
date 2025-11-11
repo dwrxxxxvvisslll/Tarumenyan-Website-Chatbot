@@ -1,0 +1,207 @@
+{
+  "goodbye": {
+    "precision": 0.8421052631578947,
+    "recall": 0.8648648648648649,
+    "f1-score": 0.8533333333333334,
+    "support": 37,
+    "confused_with": {
+      "affirm": 3,
+      "deny": 1
+    }
+  },
+  "pilih_tema_romantis": {
+    "precision": 0.8648648648648649,
+    "recall": 0.8421052631578947,
+    "f1-score": 0.8533333333333334,
+    "support": 76,
+    "confused_with": {
+      "cerita_kisah_cinta": 8,
+      "info_konsep": 2
+    }
+  },
+  "rekomendasi_dari_kisah": {
+    "precision": 0.7142857142857143,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.689655172413793,
+    "support": 15,
+    "confused_with": {
+      "kisah_cinta_bali": 2,
+      "isi_kuesioner": 2
+    }
+  },
+  "pilih_tema_perdamaian": {
+    "precision": 0.782608695652174,
+    "recall": 0.75,
+    "f1-score": 0.7659574468085107,
+    "support": 24,
+    "confused_with": {
+      "pilih_tema_perjuangan": 4,
+      "cerita_kisah_cinta": 2
+    }
+  },
+  "booking": {
+    "precision": 0.9285714285714286,
+    "recall": 0.8863636363636364,
+    "f1-score": 0.9069767441860465,
+    "support": 44,
+    "confused_with": {
+      "affirm": 1,
+      "pilih_tema_perjuangan": 1
+    }
+  },
+  "greet": {
+    "precision": 0.8,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.8421052631578948,
+    "support": 54,
+    "confused_with": {
+      "affirm": 2,
+      "isi_kuesioner": 2
+    }
+  },
+  "info_konsep": {
+    "precision": 0.574468085106383,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.675,
+    "support": 33,
+    "confused_with": {
+      "tanya_makna": 2,
+      "pilih_tema_perjuangan": 2
+    }
+  },
+  "cerita_kisah_cinta": {
+    "precision": 0.8527131782945736,
+    "recall": 0.8270676691729323,
+    "f1-score": 0.8396946564885495,
+    "support": 133,
+    "confused_with": {
+      "pilih_tema_romantis": 6,
+      "deny": 5
+    }
+  },
+  "isi_kuesioner": {
+    "precision": 0.8508771929824561,
+    "recall": 0.8290598290598291,
+    "f1-score": 0.8398268398268399,
+    "support": 117,
+    "confused_with": {
+      "info_konsep": 6,
+      "out_of_scope": 5
+    }
+  },
+  "info_lokasi": {
+    "precision": 0.88,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.8979591836734694,
+    "support": 24,
+    "confused_with": {
+      "info_paket": 1,
+      "info_konsep": 1
+    }
+  },
+  "out_of_scope": {
+    "precision": 0.8125,
+    "recall": 0.5855855855855856,
+    "f1-score": 0.6806282722513088,
+    "support": 111,
+    "confused_with": {
+      "deny": 10,
+      "affirm": 7
+    }
+  },
+  "info_paket": {
+    "precision": 0.9130434782608695,
+    "recall": 0.9545454545454546,
+    "f1-score": 0.9333333333333332,
+    "support": 44,
+    "confused_with": {
+      "out_of_scope": 1,
+      "finance_oos": 1
+    }
+  },
+  "deny": {
+    "precision": 0.6333333333333333,
+    "recall": 0.7169811320754716,
+    "f1-score": 0.672566371681416,
+    "support": 53,
+    "confused_with": {
+      "affirm": 6,
+      "goodbye": 3
+    }
+  },
+  "pilih_tema_perjuangan": {
+    "precision": 0.625,
+    "recall": 0.8823529411764706,
+    "f1-score": 0.7317073170731708,
+    "support": 17,
+    "confused_with": {
+      "cerita_kisah_cinta": 1,
+      "isi_kuesioner": 1
+    }
+  },
+  "tanya_makna": {
+    "precision": 0.9090909090909091,
+    "recall": 0.6521739130434783,
+    "f1-score": 0.759493670886076,
+    "support": 46,
+    "confused_with": {
+      "info_konsep": 9,
+      "pilih_tema_perdamaian": 3
+    }
+  },
+  "jelaskan_legenda": {
+    "precision": 0.8518518518518519,
+    "recall": 0.92,
+    "f1-score": 0.8846153846153846,
+    "support": 25,
+    "confused_with": {
+      "kisah_cinta_bali": 2
+    }
+  },
+  "affirm": {
+    "precision": 0.7717391304347826,
+    "recall": 0.8554216867469879,
+    "f1-score": 0.8114285714285713,
+    "support": 83,
+    "confused_with": {
+      "greet": 5,
+      "deny": 4
+    }
+  },
+  "finance_oos": {
+    "precision": 0.868421052631579,
+    "recall": 1.0,
+    "f1-score": 0.9295774647887324,
+    "support": 33,
+    "confused_with": {}
+  },
+  "kisah_cinta_bali": {
+    "precision": 0.7567567567567568,
+    "recall": 0.8235294117647058,
+    "f1-score": 0.7887323943661971,
+    "support": 34,
+    "confused_with": {
+      "jelaskan_legenda": 3,
+      "pilih_tema_romantis": 1
+    }
+  },
+  "accuracy": 0.8095712861415753,
+  "macro avg": {
+    "precision": 0.8016963650145037,
+    "recall": 0.8252871277874396,
+    "f1-score": 0.8082065659813664,
+    "support": 1003
+  },
+  "weighted avg": {
+    "precision": 0.8171407008490237,
+    "recall": 0.8095712861415753,
+    "f1-score": 0.8084699437078624,
+    "support": 1003
+  },
+  "micro avg": {
+    "precision": 0.8095712861415753,
+    "recall": 0.8095712861415753,
+    "f1-score": 0.8095712861415753,
+    "support": 1003
+  }
+}

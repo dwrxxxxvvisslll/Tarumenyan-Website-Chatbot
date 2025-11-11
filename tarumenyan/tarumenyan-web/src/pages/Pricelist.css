@@ -1,0 +1,212 @@
+.pricelist-page {
+  padding: 80px 20px;
+}
+
+.pricelist-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pricelist-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.pricelist-header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.pricelist-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.price-card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.price-card.popular {
+  border: 2px solid #0b2b26;
+  transform: scale(1.05);
+}
+
+.price-card.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background-color: #0b2b26;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.price-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 25px;
+}
+
+.features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0b2b26;
+  font-weight: bold;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0b2b26;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #0d3b34;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25d366;
+  color: white;
+}
+
+.pdf-btn {
+  background-color: #f40f02;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
+
+.custom-package {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.custom-package h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.custom-package p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.contact-btn {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: #0b2b26;
+  border: 2px solid #0b2b26;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0b2b26;
+  color: #fff;
+}
+
+.additional-info {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.additional-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.additional-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.additional-info li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+@media screen and (max-width: 768px) {
+  .price-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .price-card.popular {
+    transform: none;
+  }
+
+  .price-card.popular:hover {
+    transform: translateY(-10px);
+  }
+}

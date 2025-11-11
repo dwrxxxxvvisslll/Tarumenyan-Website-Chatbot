@@ -1,0 +1,137 @@
+version: '3.1'
+intents:
+- affirm
+- booking
+- cerita_kisah_cinta
+- deny
+- goodbye
+- greet
+- info_konsep
+- info_lokasi
+- info_paket
+- isi_kuesioner
+- nlu_fallback
+- out_of_scope
+- pilih_tema_perdamaian
+- pilih_tema_perjuangan
+- pilih_tema_romantis
+- tanya_makna
+entities:
+- tema
+- lokasi
+slots:
+  tema:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: tema
+  nama_pasangan:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: nama_pasangan
+  kisah_cinta:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: kisah_cinta
+  latar_belakang:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: latar_belakang
+  tahu_legenda:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: tahu_legenda
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: tahu_legenda
+  kepuasan:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: kepuasan
+  budget:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: budget
+  rekomendasi_tema:
+    type: text
+    mappings:
+    - type: custom
+responses:
+  utter_greet:
+  - text: |-
+      🙏 Om Swastyastu! Selamat datang di Konsultan Prewedding Legenda Bali.
+
+      Saya akan membantu Anda menemukan konsep prewedding yang bermakna berdasarkan cerita cinta legendaris Bali.
+
+      Mau mulai dari mana?
+  utter_ask_nama_pasangan:
+  - text: 'Boleh tahu nama kalian berdua? (misal: Budi & Ani)'
+  utter_ask_kisah_cinta:
+  - text: Ceritakan kisah cinta kalian dalam beberapa kalimat. Apa yang membuat hubungan kalian unik? 💕
+  utter_ask_latar_belakang:
+  - text: 'Apakah kalian dari latar belakang yang berbeda? (misal: beda agama, suku, budaya, atau sama saja)'
+  utter_ask_tahu_legenda:
+  - text: Sebelumnya, apakah Anda sudah tahu tentang legenda-legenda Bali seperti Ratu Pantai Kuta atau Manik Angkeran?
+  utter_ask_kepuasan:
+  - text: Seberapa puas dengan rekomendasi tema yang saya berikan? (1-5, dimana 5 = sangat puas)
+  utter_ask_budget:
+  - text: 'Berapa budget yang Anda siapkan untuk prewedding? (a: <5jt, b: 5-10jt, c: >10jt)'
+  utter_submit_form:
+  - text: Terima kasih! 🙏 Saya sedang analisis kisah cinta Anda...
+  utter_goodbye:
+  - text: |-
+      Terima kasih sudah berkonsultasi! 💕
+
+      Om Shanti Shanti Shanti Om 🙏
+  utter_info_konsep:
+  - text: |-
+      ✨ 3 KONSEP PREWEDDING LEGENDA BALI ✨
+
+      🌊 1. RATU PANTAI KUTA - Cinta yang Mendamaikan
+      💎 2. PUTRI AYU BALI - Cinta pada Pandangan Pertama
+      🐉 3. MANIK ANGKERAN - Cinta yang Mengubah
+
+      Mau saya bantu pilih tema yang cocok dengan kisah Anda? Ketik: bantu saya pilih tema
+forms:
+  kuesioner_form:
+    required_slots:
+    - nama_pasangan
+    - kisah_cinta
+    - latar_belakang
+    - tahu_legenda
+    - kepuasan
+    - budget
+actions:
+- utter_greet
+- action_analisis_kisah_cinta
+- action_rekomendasi_tema
+- action_simpan_data_riset
+- action_default_fallback
+- action_handle_out_of_scope
+- validate_kuesioner_form
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

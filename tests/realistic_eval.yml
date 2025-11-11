@@ -1,0 +1,230 @@
+version: "3.1"
+nlu:
+
+# Greet
+- intent: greet
+  examples: |
+    - halo
+    - hai
+    - permisi
+    - pagi
+    - siang
+    - malam
+    - hallo
+    - hi there
+    - halo min
+    - halo kak
+    - salam
+    - shalom
+    - om swastyastu
+    - rahajeng semeng
+    - rahajeng wengi
+    - permisi, bisa bantu?
+    - halo, mau tanya harga paket
+    - hi, mau konsultasi dulu
+
+# Goodbye
+- intent: goodbye
+  examples: |
+    - terima kasih
+    - makasih
+    - sampai jumpa
+    - bye
+    - oke thanks
+    - selesai
+    - cukup segini dulu
+    - see you
+    - thank you
+    - tq
+    - oke, nanti lanjut lagi ya
+    - makasih ya, sis
+
+# Affirm
+- intent: affirm
+  examples: |
+    - iya
+    - ya
+    - ok
+    - oke
+    - yup
+    - betul
+    - benar
+    - correct
+    - tentu saja
+    - lanjut
+    - iya lanjut aja deh
+    - oke kayanya cocok
+    - fix ya
+
+# Deny
+- intent: deny
+  examples: |
+    - tidak
+    - ga
+    - enggak
+    - nggak
+    - nope
+    - belum
+    - nanti dulu
+    - kagak
+    - keliru
+    - ga dulu deh
+    - belum yakin
+    - skip dulu
+
+# Out of scope
+- intent: out_of_scope
+  examples: |
+    - kamu siapa?
+    - cuaca hari ini gimana?
+    - resep nasi goreng
+    - lagi ngapain?
+    - kamu dimana?
+    - berita hari ini
+    - harga mobil
+    - lowongan kerja
+    - kapan hari valentine?
+    - cara buat kue nastar
+    - nilai tukar dolar
+
+# Booking
+- intent: booking
+  examples: |
+    - cara booking
+    - mau pesan
+    - gimana reservasi?
+    - contact person
+    - nomor yang bisa dihubungi?
+    - mau order
+    - saya tertarik
+    - mau booking paket
+    - bisa booking untuk minggu depan?
+    - kapan bisa reservasi?
+    - nomor WA untuk pesan?
+
+# Tanya makna
+- intent: tanya_makna
+  examples: |
+    - kenapa harus pakai legenda?
+    - apa kelebihannya?
+    - apa bedanya konsep ini?
+    - mengapa storytelling?
+    - apa keunikan konsep ini?
+    - kenapa legenda bali?
+    - apa sih maksud 'tema unity'?
+    - jelasin secara singkat konsepnya?
+
+# Info konsep
+- intent: info_konsep
+  examples: |
+    - tunjukkan semua konsep
+    - ada tema apa?
+    - konsepnya apa aja?
+    - cerita apa aja?
+    - info konsep dong
+    - tema yang ada apa?
+    - list tema yang tersedia dong
+    - ada pilihan cerita apa?
+
+# Info paket
+- intent: info_paket
+  examples: |
+    - harga paket berapa?
+    - kisaran biaya prewedding
+    - price list
+    - ada paket apa?
+    - budget berapa?
+    - lebih murah dari lain?
+    - kalo budget 5jt dapat apa?
+    - ada diskon?
+
+# Info lokasi
+- intent: info_lokasi
+  examples: |
+    - lokasi foto dimana?
+    - tempat prewedding
+    - rekomendasi lokasi
+    - lokasinya dimana aja?
+    - shooting dimana?
+    - ada lokasi apa?
+    - lokasi indoor outdoor mana aja?
+    - di bali bagian mana?
+
+# Isi kuesioner (pemilihan tema)
+- intent: isi_kuesioner
+  examples: |
+    - bantu saya pilih tema
+    - rekomendasikan tema untuk saya
+    - tolong carikan tema yang cocok
+    - tema mana yang cocok?
+    - butuh saran tema
+    - minta rekomendasi tema
+    - pilihkan yang terbaik
+    - cocok sama kami yang mana?
+    - tema ideal untuk kami?
+    - perfect match tema apa?
+    - bisa rekomen tanpa jelasin panjang?
+    - tolong saranin yg pas buat kami
+    - minta rekomendasi yang cocok
+
+# Cerita kisah cinta
+- intent: cerita_kisah_cinta
+  examples: |
+    - kami LDR
+    - hubungan jarak jauh
+    - video call tiap hari
+    - online relationship
+    - ga pernah ketemu langsung
+    - kami melewati fase sulit bersama
+    - perjalanan kami penuh liku
+    - tantangan membuat kami lebih kuat
+    - struggle is real
+    - kami beda kota
+    - kami sempat putus nyambung
+    - melewati masa sulit bareng
+    - pacaran sejak SMA
+
+# Pilih tema romantis
+- intent: pilih_tema_romantis
+  examples: |
+    - tema romantis
+    - cinta pandangan pertama
+    - konsep fairytale
+    - soft and romantic
+    - dreamy concept
+    - pastel vibes
+    - natural romantic
+    - princess and prince
+    - nuansa lembut dreamy, cocok?
+    - tema fairytale romantis dong
+    - soft romantic style
+
+# Pilih tema perdamaian
+- intent: pilih_tema_perdamaian
+  examples: |
+    - tema perdamaian
+    - konsep menyatukan perbedaan
+    - tema unity
+    - lintas budaya
+    - intercultural love
+    - beda agama
+    - love conquers all
+    - dramatic landscape
+    - kami beda tradisi, cocok tema apa?
+    - konsep unity lintas budaya
+    - perbedaan jadi harmoni
+
+# Pilih tema perjuangan
+- intent: pilih_tema_perjuangan
+  examples: |
+    - tema perjuangan
+    - konsep manik angkeran
+    - tema perjalanan epik
+    - overcoming obstacles
+    - kami bertahan
+    - tema kemenangan
+    - conquering challenges
+    - adventure couple
+    - kami berjuang sampai bisa
+    - cerita overcoming obstacles
+    - tema kemenangan setelah rintangan

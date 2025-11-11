@@ -1,0 +1,188 @@
+version: "3.1"
+
+rules:
+- rule: Activate form
+  steps:
+  - intent: isi_kuesioner
+  - action: action_reset_kuesioner
+  - action: kuesioner_form
+  - active_loop: kuesioner_form
+
+- rule: Submit form
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - action: kuesioner_form
+  - active_loop: null
+  - action: utter_submit_form
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- rule: Mulai feedback rating
+  steps:
+  - intent: mulai_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+
+- rule: Submit feedback form
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - action: feedback_form
+  - active_loop: null
+  - action: action_simpan_data_riset
+
+- rule: Handle out of scope
+  steps:
+  - intent: out_of_scope
+  - action: action_handle_out_of_scope
+
+- rule: Handle finance out of scope
+  steps:
+  - intent: finance_oos
+  - action: action_handle_out_of_scope
+
+- rule: Handle nlu fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+# Info paket harga dan benefit
+- rule: Tampilkan info paket
+  steps:
+  - intent: info_paket
+  - action: utter_info_paket
+
+# Info konsep prewedding legenda Bali
+- rule: Tampilkan info konsep
+  steps:
+  - intent: info_konsep
+  - action: utter_info_konsep
+
+# Info lokasi pemotretan yang direkomendasikan
+- rule: Tampilkan info lokasi
+  steps:
+  - intent: info_lokasi
+  - action: utter_info_lokasi
+
+# Alur booking cepat dengan CTA ke WhatsApp
+- rule: Proses booking
+  steps:
+  - intent: booking
+  - action: utter_booking
+
+# Pertanyaan makna tiap tema diarahkan ke penjelasan legenda
+- rule: Tanya makna tiap tema
+  steps:
+  - intent: tanya_makna
+  - action: action_jelaskan_legenda
+
+- rule: Kisah cinta Bali
+  steps:
+  - intent: kisah_cinta_bali
+  - action: action_kisah_cinta_bali
+
+# Izinkan cerita kisah cinta saat feedback form aktif
+- rule: Kisah cinta Bali saat feedback form aktif
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - intent: kisah_cinta_bali
+  - action: action_kisah_cinta_bali
+  - action: feedback_form
+
+# Izinkan cerita kisah cinta saat kuesioner aktif
+- rule: Kisah cinta Bali saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: kisah_cinta_bali
+  - action: action_kisah_cinta_bali
+
+- rule: Lihat detail konsep
+  steps:
+  - intent: lihat_detail_konsep
+  - action: action_detail_konsep
+
+# Izinkan lihat detail saat form feedback aktif
+- rule: Lihat detail konsep saat feedback form aktif
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - intent: lihat_detail_konsep
+  - action: action_detail_konsep
+  - action: feedback_form
+
+# Izinkan lihat detail saat form kuesioner aktif
+- rule: Lihat detail konsep saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: lihat_detail_konsep
+  - action: action_detail_konsep
+# Jelaskan legenda
+- rule: Jelaskan legenda
+  steps:
+  - intent: jelaskan_legenda
+  - action: action_jelaskan_legenda
+
+# Jelaskan legenda saat feedback form aktif
+- rule: Jelaskan legenda saat feedback form aktif
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - intent: jelaskan_legenda
+  - action: action_jelaskan_legenda
+  - action: feedback_form
+
+# Jelaskan legenda saat kuesioner aktif
+- rule: Jelaskan legenda saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: jelaskan_legenda
+  - action: action_jelaskan_legenda
+- rule: Rekomendasi tema dari kisah
+  steps:
+  - intent: rekomendasi_dari_kisah
+  - action: action_rekomendasi_dari_kisah
+
+- rule: Sambut pengguna kapan pun
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Greet saat feedback form aktif
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: feedback_form
+  - active_loop: feedback_form
+
+- rule: Greet saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: kuesioner_form
+  - active_loop: kuesioner_form
+
+# Rekomendasi saat feedback form aktif
+- rule: Rekomendasi dari kisah saat feedback form aktif
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - intent: rekomendasi_dari_kisah
+  - action: action_rekomendasi_dari_kisah
+  - action: feedback_form
+
+# Rekomendasi saat kuesioner aktif
+- rule: Rekomendasi dari kisah saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: rekomendasi_dari_kisah
+  - action: action_rekomendasi_dari_kisah

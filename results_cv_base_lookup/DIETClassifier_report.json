@@ -1,0 +1,37 @@
+{
+  "tema": {
+    "precision": 0.8421052631578947,
+    "recall": 0.9056603773584906,
+    "f1-score": 0.8727272727272727,
+    "support": 53,
+    "confused_with": {}
+  },
+  "kisah_id": {
+    "precision": 0.9565217391304348,
+    "recall": 0.6285714285714286,
+    "f1-score": 0.7586206896551724,
+    "support": 35,
+    "confused_with": {
+      "tema": 2
+    }
+  },
+  "micro avg": {
+    "precision": 0.875,
+    "recall": 0.7954545454545454,
+    "f1-score": 0.8333333333333334,
+    "support": 88
+  },
+  "macro avg": {
+    "precision": 0.8993135011441648,
+    "recall": 0.7671159029649596,
+    "f1-score": 0.8156739811912226,
+    "support": 88
+  },
+  "weighted avg": {
+    "precision": 0.8876118161015185,
+    "recall": 0.7954545454545454,
+    "f1-score": 0.8273439726417782,
+    "support": 88
+  },
+  "accuracy": 0.9921757448089076
+}

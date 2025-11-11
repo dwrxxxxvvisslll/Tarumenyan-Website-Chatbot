@@ -1,0 +1,274 @@
+.footer {
+  background-color: #0b2b26;
+  padding: 4rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  width: 30%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding: 0 10px;
+}
+
+.footer-logo h2 {
+  margin-bottom: 10px;
+  color: #fdd592;
+  font-family: "Forum", serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin-left: 17%;
+}
+
+.footer-logo p {
+  color: #fdd592;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.footer-logo-image {
+  display: flex;
+  margin-left: 35%;
+  margin-bottom: 3%;
+  width: 15%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .footer-logo p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-logo-image {
+    margin: 0 auto 3% auto;
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-logo h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-logo p {
+    font-size: 0.65rem;
+  }
+
+  .footer-logo-image {
+    width: 35%;
+  }
+}
+
+.footer-links {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  aoplin-items: flex-start;
+}
+
+.footer-link-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  min-width: 200px;
+  margin: 0 10px;
+}
+
+.footer-link-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px 0;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.footer-link-items h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer-link-items a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s ease-out;
+}
+
+.footer-link-items a:hover {
+  color: #fdd592;
+  transition: 0.3s ease-out;
+}
+
+.social-media {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.social-media-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+.social-logo {
+  color: #fdd592;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: normal;
+  font-family: "Forum", serif;
+  letter-spacing: 2px;
+}
+
+.website-rights-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+}
+
+.website-rights {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+}
+
+.social-icon-link {
+  color: #fdd592;
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 960px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footer-link-wrapper {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .social-media-wrap {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem 0;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-link-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-link-items {
+    width: 80%;
+    padding: 10px 0;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .footer-link-items h2 {
+    margin-bottom: 12px;
+  }
+  
+  .footer-link-items a {
+    margin-bottom: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .footer-link-items {
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  .footer-logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-logo p {
+    font-size: 0.6rem;
+  }
+}

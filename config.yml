@@ -1,0 +1,62 @@
+version: "3.1"
+
+language: id
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: RegexFeaturizer
+- name: LanguageModelFeaturizer
+  model_name: bert
+  model_weights: indobenchmark/indobert-base-p2
+  pooling: cls
+- name: CountVectorsFeaturizer
+  min_ngram: 1
+  max_ngram: 2
+  lowercase: true
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 3
+  max_ngram: 5
+- name: DIETClassifier
+  epochs: 85
+  constrain_similarities: true
+  learning_rate: 0.0018
+  dropout: 0.35
+  batch_size: [32, 64]
+  random_seed: 42
+  model_confidence: softmax
+  entity_recognition: true
+  hidden_layers_sizes:
+    text: [256, 128]
+  transformer_size: 256
+  number_of_transformer_layers: 2
+- name: custom_components.restricted_keyword_intent_classifier.RestrictedKeywordIntentClassifier
+  allowed_intents:
+    - affirm
+    - goodbye
+  case_sensitive: false
+  min_keyword_length: 4
+  blocklist_keywords: ["ya", "iya", "oke", "ok", "baik", "sip", "betul", "benar"]
+- name: custom_components.intent_confidence_calibrator.IntentConfidenceCalibrator
+  temperature: 1.6
+  max_confidence: 0.92
+- name: EntitySynonymMapper
+- name: FallbackClassifier
+  threshold: 0.50
+  ambiguity_threshold: 0.10
+
+policies:
+- name: RulePolicy
+  core_fallback_threshold: 0.3
+  core_fallback_action_name: "action_handle_out_of_scope"
+- name: MemoizationPolicy
+  max_history: 5
+- name: TEDPolicy
+  max_history: 5
+  epochs: 60
+  batch_size: [32, 128]
+  learning_rate: 0.0005
+  dropout: 0.2
+  constrain_similarities: true
+assistant_id: 20251108-211349-easy-bollard

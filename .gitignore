@@ -1,0 +1,38 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Rasa artifacts & caches
+.rasa/
+models/
+results/
+scripts/logs/
+scripts/server_pids.json
+
+# Env files (keep example only)
+*.env
+*.env.local
+*.env.*
+scripts/.env.local
+tarumenyan/backend-trm/.env
+tarumenyan/backend-trm/.env.local
+tarumenyan/tarumenyan-web/.env
+tarumenyan/tarumenyan-web/.env.local
+
+# Node modules
+node_modules/
+tarumenyan/tarumenyan-web/node_modules/
+tarumenyan/backend-trm/node_modules/
+
+# Uploads or generated files
+tarumenyan/backend-trm/uploads/
+
+# Avoid committing nested clone of the target repo
+Tarumenyan-Website-Chatbot/
+

@@ -1,0 +1,533 @@
+.home {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/placeholder.svg?height=800&width=1600");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.featured-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.featured-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-10px);
+}
+
+.featured-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3/2;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* Empty gallery state in featured cards */
+.featured-card .empty-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.featured-card .empty-gallery p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .featured-card .empty-gallery {
+    min-height: 150px;
+  }
+  
+  .featured-card .empty-gallery p {
+    font-size: 0.9rem;
+  }
+}
+
+.featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* Animasi fading untuk slideshow */
+.featured-img.fade-in {
+  opacity: 1;
+}
+
+.featured-img.fade-out {
+  opacity: 0;
+}
+
+.featured-card:hover .featured-img {
+  transform: scale(1.1);
+}
+
+.featured-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.featured-card p {
+  color: #666;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-text h4 {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  font-weight: normal;
+}
+
+.about-button-container {
+  text-align: center;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.testimonial-card {
+  width: 300px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.review-rating {
+  margin: 10px 0;
+}
+
+.star {
+  color: #ddd;
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.testimonial-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.testimonial-info {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.testimonial-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: #000;
+  border-color: #000;
+}
+
+.testimonial-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/placeholder.svg?height=600&width=1600");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-content,
+  .about-image {
+    width: 100%;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+  
+  .about-text {
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .featured-card,
+  .testimonial-card {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+  }
+  
+  .about-section {
+    padding: 60px 15px;
+  }
+}
+
+
+/* Modal dan Karosel Styling */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.modal-image-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.modal-caption {
+  padding: 15px;
+  background-color: white;
+  text-align: center;
+}
+
+.modal-caption h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.modal-caption p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Overlay untuk gambar yang bisa diklik */
+.featured-img-container {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featured-img-container:hover .img-overlay {
+  opacity: 1;
+}
+
+.view-icon {
+  color: white;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .modal-image-container {
+    height: 50vh;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+}

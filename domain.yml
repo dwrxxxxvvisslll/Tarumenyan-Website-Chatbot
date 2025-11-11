@@ -1,0 +1,268 @@
+version: '3.1'
+intents:
+  - affirm
+  - booking
+  - cerita_kisah_cinta
+  - kisah_cinta_bali
+  - rekomendasi_dari_kisah
+  - lihat_detail_konsep
+  - jelaskan_legenda
+  - mulai_feedback
+  - deny
+  - goodbye
+  - greet
+  - info_konsep
+  - info_lokasi
+  - info_paket
+  - isi_kuesioner
+  - nlu_fallback
+  - out_of_scope
+  - finance_oos
+  - pilih_tema_perdamaian
+  - pilih_tema_perjuangan
+  - pilih_tema_romantis
+  - tanya_makna
+entities:
+  - tema
+  - lokasi
+  - kisah_id
+slots:
+  tema:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: tema
+  nama_pasangan:
+    type: text
+    mappings:
+    - type: from_text
+      not_intent:
+      - greet
+      - goodbye
+      - out_of_scope
+      - nlu_fallback
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: nama_pasangan
+  kisah_cinta:
+    type: text
+    mappings:
+    - type: from_text
+      not_intent:
+      - greet
+      - goodbye
+      - out_of_scope
+      - nlu_fallback
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: kisah_cinta
+  latar_belakang:
+    type: text
+    mappings:
+    - type: from_text
+      not_intent:
+      - greet
+      - goodbye
+      - out_of_scope
+      - nlu_fallback
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: latar_belakang
+  tahu_legenda:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: tahu_legenda
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: tahu_legenda
+  kepuasan:
+    type: text
+    mappings:
+    - type: from_text
+      not_intent:
+      - greet
+      - out_of_scope
+      - nlu_fallback
+      conditions:
+      - active_loop: feedback_form
+        requested_slot: kepuasan
+  budget:
+    type: text
+    mappings:
+    - type: from_text
+      not_intent:
+      - greet
+      - out_of_scope
+      - nlu_fallback
+      conditions:
+      - active_loop: kuesioner_form
+        requested_slot: budget
+  rekomendasi_tema:
+    type: text
+    mappings:
+    - type: custom
+  kisah_id:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: kisah_id
+responses:
+  utter_greet:
+  - text: |-
+      🙏 Om Swastyastu! Selamat datang di Konsultan Prewedding Legenda Bali.
+
+      Saya akan bantu temukan konsep prewedding yang bermakna dari kisah cinta Bali.
+
+      Pilih salah satu di bawah ini ya:
+    buttons:
+    - title: "Kisah cinta Bali"
+      payload: "/kisah_cinta_bali"
+    - title: "Analisis kisah kami"
+      payload: "/isi_kuesioner"
+    - title: "Lihat detail konsep"
+      payload: "/lihat_detail_konsep"
+    - title: "Info paket"
+      payload: "/info_paket"
+  utter_ask_nama_pasangan:
+  - text: 'Boleh tahu nama kalian berdua? (misal: Budi & Ani)'
+  utter_ask_kisah_cinta:
+  - text: Ceritakan kisah cinta kalian dalam beberapa kalimat. Apa yang membuat hubungan kalian unik? 💕
+  utter_ask_latar_belakang:
+  - text: 'Apakah kalian dari latar belakang yang berbeda? (misal: beda agama, suku, budaya, atau sama saja)'
+  utter_ask_tahu_legenda:
+  - text: Sebelumnya, apakah Anda sudah tahu tentang legenda-legenda Bali seperti Ratu Pantai Kuta atau Manik Angkeran?
+  utter_ask_kepuasan:
+  - text: Seberapa puas dengan rekomendasi tema yang saya berikan? (1-5, dimana 5 = sangat puas)
+  utter_ask_budget:
+  - text: 'Berapa budget yang Anda siapkan untuk prewedding? (a: <5jt, b: 5-10jt, c: >10jt)'
+  utter_submit_form:
+  - text: Terima kasih! 🙏 Saya sedang analisis kisah cinta Anda...
+  utter_goodbye:
+  - text: |-
+      Terima kasih sudah berkonsultasi! 💕
+
+      Om Shanti Shanti Shanti Om 🙏
+  utter_info_konsep:
+  - text: |-
+      ✨ KONSEP PREWEDDING LEGENDA BALI (Lengkap) ✨
+
+      🌊 RATU PANTAI KUTA — Cinta yang Mendamaikan
+      💎 PUTRI AYU BALI — Cinta pada Pandangan Pertama
+      🐉 MANIK ANGKERAN — Cinta yang Menguat melalui Tantangan
+      🌿 ULUN DANU BERATAN — Harmoni & Keseimbangan Alam
+      🌺 JAYAPRANA–LAYONSARI — Kesetiaan Abadi & Ketulusan
+      🕊️ SRI JAYA PANGUS & KANG CING WIE — Akulturasi & Tradisi
+
+      Mau lihat detail atau penjelasan legenda? Pilih tombol di bawah ini.
+    buttons:
+    - title: "Detail Ratu Pantai"
+      payload: "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"
+    - title: "Detail Putri Ayu"
+      payload: "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"
+    - title: "Detail Manik Angkeran"
+      payload: "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"
+    - title: "Detail Ulun Danu"
+      payload: "/lihat_detail_konsep{\"tema\": \"ulun_danu\"}"
+    - title: "Detail Jayaprana–Layonsari"
+      payload: "/lihat_detail_konsep{\"tema\": \"jayaprana_layonsari\"}"
+    - title: "Detail Sri Jaya Pangus"
+      payload: "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"
+    - title: "Jelaskan legenda"
+      payload: "/jelaskan_legenda"
+  utter_info_paket:
+  - text: |-
+      💼 INFO PAKET & HARGA
+
+      • BASIC — Rp 4.500.000
+        1 lokasi, 4 jam, 50+ foto
+
+        Cocok untuk pasangan dengan waktu terbatas.
+
+      • PREMIUM — Rp 8.500.000
+        2 lokasi, 6 jam, 100+ foto, MUA, video 2 menit
+
+        Paket paling populer, balance hasil & harga.
+
+      • DIAMOND — Rp 15.000.000
+        3 lokasi, 8–10 jam, 150+ foto, full team, video 5 menit
+
+        Maksimalkan storytelling konsep legenda.
+
+      Mau saya bantu rekomendasikan paket berdasarkan tema dan budget?
+    buttons:
+    - title: "Analisis kisah kami"
+      payload: "/isi_kuesioner"
+    - title: "Lihat detail konsep"
+      payload: "/lihat_detail_konsep"
+    - title: "Booking sekarang"
+      payload: "/booking"
+  utter_info_lokasi:
+  - text: |-
+      📍 LOKASI REKOMENDASI
+
+      • Pantai Kuta, Melasti, Tanah Lot — nuansa Ratu Pantai Kuta
+      • Tegalalang, Beratan, Taman Ujung — nuansa Putri Ayu Bali
+      • Gunung Batur, Sekumpul, Campuhan — nuansa Manik Angkeran
+
+      Lokasi bisa disesuaikan dengan tema dan budget. Mau lihat detail konsepnya?
+    buttons:
+    - title: "Detail konsep"
+      payload: "/lihat_detail_konsep"
+    - title: "Jelaskan legenda"
+      payload: "/jelaskan_legenda"
+    - title: "Analisis kisah kami"
+      payload: "/isi_kuesioner"
+  utter_booking:
+  - text: |-
+      ✅ LANGKAH BOOKING CEPAT
+
+      1) Pilih tema/konsep (bisa dari rekomendasi saya)
+      2) Tentukan paket (Basic, Premium, Diamond)
+      3) Tentukan tanggal & lokasi
+      4) DP dan konfirmasi jadwal
+
+      Hubungi WhatsApp admin: +62 812-3655-9230
+      atau klik tombol di bawah.
+    buttons:
+    - title: "Chat WhatsApp"
+      payload: "/booking"
+    - title: "Lihat paket"
+      payload: "/info_paket"
+    - title: "Detail konsep"
+      payload: "/lihat_detail_konsep"
+forms:
+  kuesioner_form:
+    required_slots:
+    - nama_pasangan
+    - kisah_cinta
+    - latar_belakang
+    - tahu_legenda
+    - budget
+  feedback_form:
+    required_slots:
+    - kepuasan
+actions:
+  - utter_greet
+  - action_analisis_kisah_cinta
+  - action_rekomendasi_tema
+  - action_detail_konsep
+  - action_jelaskan_legenda
+  - action_simpan_data_riset
+  - action_default_fallback
+  - action_handle_out_of_scope
+  - action_kisah_cinta_bali
+  - action_rekomendasi_dari_kisah
+  - action_reset_kuesioner
+  - validate_kuesioner_form
+  - validate_feedback_form
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

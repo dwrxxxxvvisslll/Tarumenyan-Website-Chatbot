@@ -1,0 +1,1530 @@
+[
+  {
+    "text": "p",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9999483823776245
+    }
+  },
+  {
+    "text": "cukup",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6947253942489624
+    }
+  },
+  {
+    "text": "tengkyu",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.693736732006073
+    }
+  },
+  {
+    "text": "sudah jelas kok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9254676103591919
+    }
+  },
+  {
+    "text": "persis",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.978949785232544
+    }
+  },
+  {
+    "text": "kurang tepat",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mau tau konsep",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.3010687232017517
+    }
+  },
+  {
+    "text": "video call mulu",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 0.5970354676246643
+    }
+  },
+  {
+    "text": "soulmate",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "perjuangan 5 tahun",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.9576264023780823
+    }
+  },
+  {
+    "text": "kami percaya takdir",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "langsung jatuh cinta",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "assist me please",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9999922513961792
+    }
+  },
+  {
+    "text": "cinta pandangan pertama, suggest tema ya",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "harga brp sih?",
+    "intent": "info_paket",
+    "intent_prediction": {
+      "name": "finance_oos",
+      "confidence": 0.16254553198814392
+    }
+  },
+  {
+    "text": "ga terlalu mahal kan?",
+    "intent": "info_paket",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9992744326591492
+    }
+  },
+  {
+    "text": "apa maksud unity di konsep perdamaian?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_perdamaian",
+      "confidence": 0.9999575614929199
+    }
+  },
+  {
+    "text": "maksud dari tema fairytale",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "apa makna romantis dalam prewedding?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ingin tahu konsep",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.984966516494751
+    }
+  },
+  {
+    "text": "hubungi siapa?",
+    "intent": "booking",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.18673862516880035
+    }
+  },
+  {
+    "text": "nomor yang bisa dihubungi?",
+    "intent": "booking",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.23401661217212677
+    }
+  },
+  {
+    "text": "harga mobil",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "finance_oos",
+      "confidence": 0.5016143321990967
+    }
+  },
+  {
+    "text": "jam berapa sekarang?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "finance_oos",
+      "confidence": 0.8666982650756836
+    }
+  },
+  {
+    "text": "sekarang jam berapa?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "finance_oos",
+      "confidence": 0.9591612219810486
+    }
+  },
+  {
+    "text": "kamu cantik ga?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8001788854598999
+    }
+  },
+  {
+    "text": "hahaha",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "bodoh",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9964950680732727
+    }
+  },
+  {
+    "text": "bingung",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "kurang jelas",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7756615281105042
+    }
+  },
+  {
+    "text": "hah?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9958904385566711
+    }
+  },
+  {
+    "text": "mksdnya?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.29345276951789856
+    }
+  },
+  {
+    "text": "butuh rekomendasi tema dari Sastra Bali Modern",
+    "intent": "rekomendasi_dari_kisah",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "bukan pilih tema, cuma nanya info",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "perdamaian? bukan yang dicari",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "pilih_tema_perdamaian",
+      "confidence": 0.9998849630355835
+    }
+  },
+  {
+    "text": "ceritakan kisah jayaprana layonsari",
+    "intent": "jelaskan_legenda",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.999993085861206
+    }
+  },
+  {
+    "text": "tolong jelaskan kisah jayaprana layonsari",
+    "intent": "jelaskan_legenda",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.9999920129776001
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.957716703414917
+    }
+  },
+  {
+    "text": "memang begitu",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "yap",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "deal",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9886212944984436
+    }
+  },
+  {
+    "text": "no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9999985694885254
+    }
+  },
+  {
+    "text": "bukan maksud saya",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ten",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "tenten",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9906912446022034
+    }
+  },
+  {
+    "text": "apa aja pilihannya?",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "info_paket",
+      "confidence": 0.9986888766288757
+    }
+  },
+  {
+    "text": "saya ingin mengetahui pilihan tema",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.3444599211215973
+    }
+  },
+  {
+    "text": "kami berbeda keyakinan",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9401339888572693
+    }
+  },
+  {
+    "text": "chat an terus",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9450387358665466
+    }
+  },
+  {
+    "text": "vc tiap hari",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9999959468841553
+    }
+  },
+  {
+    "text": "langsung jatuh cinta cuy",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "belum kenal lama tapi udah yakin",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "on off berkali-kali",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9329946637153625
+    }
+  },
+  {
+    "text": "susah payah bangetttt",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "fighting terus akhirnya menang",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9869408011436462
+    }
+  },
+  {
+    "text": "keluarga udah terima",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9999986886978149
+    }
+  },
+  {
+    "text": "first love theme",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.8839392066001892
+    }
+  },
+  {
+    "text": "pilih konsep pantai yang dramatis dan kuat",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.7352002859115601
+    }
+  },
+  {
+    "text": "rekomendasikan tema perjuangan karena hubungan kami penuh tantangan",
+    "intent": "pilih_tema_perjuangan",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "numpang tanya",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.22790364921092987
+    }
+  },
+  {
+    "text": "ada yang bisa bantu?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.663834273815155
+    }
+  },
+  {
+    "text": "saya butuh info",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.4265574514865875
+    }
+  },
+  {
+    "text": "pengen tau info",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "banyak pilihan jadi bingung",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tema yang sesuai apa?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9958028197288513
+    }
+  },
+  {
+    "text": "analisis kisah cinta kami dong",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.9999916553497314
+    }
+  },
+  {
+    "text": "tolong lah kak",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tempat prewedding",
+    "intent": "info_lokasi",
+    "intent_prediction": {
+      "name": "info_paket",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mau tau tempat prewed yang cakep",
+    "intent": "info_lokasi",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.986310601234436
+    }
+  },
+  {
+    "text": "apa bedanya konsep ini?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9975566864013672
+    }
+  },
+  {
+    "text": "filosofi dibalik konsep",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9929453730583191
+    }
+  },
+  {
+    "text": "bedanya apa dengan biasa?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.24037382006645203
+    }
+  },
+  {
+    "text": "makna tema perjuangan itu apa?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.7089764475822449
+    }
+  },
+  {
+    "text": "arti simbol unity dalam foto",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_perdamaian",
+      "confidence": 0.8144116997718811
+    }
+  },
+  {
+    "text": "informasi konsep",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9998237490653992
+    }
+  },
+  {
+    "text": "reservasi lokasi dan konsep",
+    "intent": "booking",
+    "intent_prediction": {
+      "name": "info_lokasi",
+      "confidence": 0.9988604784011841
+    }
+  },
+  {
+    "text": "sehat?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8837476968765259
+    }
+  },
+  {
+    "text": "siapa presiden indonesia?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.9999793767929077
+    }
+  },
+  {
+    "text": "latihan otot terbaik",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.9990295171737671
+    }
+  },
+  {
+    "text": "udah makan belum?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "harga hp samsung berapa?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "finance_oos",
+      "confidence": 0.99998939037323
+    }
+  },
+  {
+    "text": "useless",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "say again",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.7302514910697937
+    }
+  },
+  {
+    "text": "apa?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9460309743881226
+    }
+  },
+  {
+    "text": "cerita Kang Cing Wie",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.991401731967926
+    }
+  },
+  {
+    "text": "tema apa dari Sastra Bali Modern",
+    "intent": "rekomendasi_dari_kisah",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.6451345086097717
+    }
+  },
+  {
+    "text": "tema yang pas untuk cerita bali ini apa?",
+    "intent": "rekomendasi_dari_kisah",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "punapi gatra",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9977864027023315
+    }
+  },
+  {
+    "text": "sugeng enjing",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8130478858947754
+    }
+  },
+  {
+    "text": "om santi santi om",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.7297378182411194
+    }
+  },
+  {
+    "text": "sekian, terima kasih",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tepat",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cerita apa aja?",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9999997615814209
+    }
+  },
+  {
+    "text": "keluarga tiang ten setuju",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9930124878883362
+    }
+  },
+  {
+    "text": "ini jodoh dari Tuhan",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 0.9665751457214355
+    }
+  },
+  {
+    "text": "keluarga tidak restui",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7667409777641296
+    }
+  },
+  {
+    "text": "badai sudah dilewati",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9999995231628418
+    }
+  },
+  {
+    "text": "konsep fairytale",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.8296543955802917
+    }
+  },
+  {
+    "text": "fairytale vibes",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "soulmate vibes",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tema yang cocok kalau kami beda agama apa?",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "boleh nanya",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9126291871070862
+    }
+  },
+  {
+    "text": "perlu guidance",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.824292004108429
+    }
+  },
+  {
+    "text": "dari cerita kami cocok tema apa?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "rekomendasi_dari_kisah",
+      "confidence": 0.995355486869812
+    }
+  },
+  {
+    "text": "cocok tema apa buat kita?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9228190779685974
+    }
+  },
+  {
+    "text": "saya memerlukan bantuan pemilihan konsep",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9946975708007812
+    }
+  },
+  {
+    "text": "apa kelebihannya?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9997045397758484
+    }
+  },
+  {
+    "text": "makna yang ingin disampaikan?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "rekomendasi_dari_kisah",
+      "confidence": 0.52007657289505
+    }
+  },
+  {
+    "text": "ada filosofi khusus untuk perjuangan?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.975091278553009
+    }
+  },
+  {
+    "text": "apa pesan yang ingin disampaikan?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.5484108924865723
+    }
+  },
+  {
+    "text": "info konsep",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9995705485343933
+    }
+  },
+  {
+    "text": "saya tertarik",
+    "intent": "booking",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9843775033950806
+    }
+  },
+  {
+    "text": "siapa yang buat kamu?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.18487612903118134
+    }
+  },
+  {
+    "text": "nilai matematika gimana?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.3507017195224762
+    }
+  },
+  {
+    "text": "kamu dimana?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.999985933303833
+    }
+  },
+  {
+    "text": "tempat servis motor terdekat",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "info_lokasi",
+      "confidence": 0.9999959468841553
+    }
+  },
+  {
+    "text": "kamu tinggal dimana?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9999924898147583
+    }
+  },
+  {
+    "text": "kamu punya pacar?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9999891519546509
+    }
+  },
+  {
+    "text": "teka teki",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9178024530410767
+    }
+  },
+  {
+    "text": "xixixi",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "benci deh",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9814341068267822
+    }
+  },
+  {
+    "text": "tolong ulang",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "what?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9982324242591858
+    }
+  },
+  {
+    "text": "ceritakan kisah cinta bali",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "jelaskan_legenda",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "minta cerita dari sastra bali",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "rekomendasi_dari_kisah",
+      "confidence": 0.9977819323539734
+    }
+  },
+  {
+    "text": "jelaskan kisah jayaprana dan layonsari",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "jelaskan_legenda",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ya sudah, pamit",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tq",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.15545576810836792
+    }
+  },
+  {
+    "text": "continue please",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9978431463241577
+    }
+  },
+  {
+    "text": "ogah",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nanti dulu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "next",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mungkin nanti",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "masih ragu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.3133285343647003
+    }
+  },
+  {
+    "text": "stop",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "info konsep",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "tanya_makna",
+      "confidence": 0.9999523162841797
+    }
+  },
+  {
+    "text": "dia overseas saya indonesia",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "vibes cocok dari awal",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "rekomendasi_dari_kisah",
+      "confidence": 0.5458278656005859
+    }
+  },
+  {
+    "text": "gosip dimana-mana",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cinta pandangan pertama",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9969123601913452
+    }
+  },
+  {
+    "text": "cinta pertama",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tolong pilihkan tema perdamaian",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.9986613988876343
+    }
+  },
+  {
+    "text": "tolong pilih konsep yang menonjolkan penerimaan",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.9992409944534302
+    }
+  },
+  {
+    "text": "rekomendasi tema celebrating diversity",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.9753236770629883
+    }
+  },
+  {
+    "text": "gimana cara pilih tema?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "booking",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tema terbaik untuk kami apa?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "budget terbatas, bantu pilih dong",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_paket",
+      "confidence": 0.8525484800338745
+    }
+  },
+  {
+    "text": "minta info ketersediaan tanggal",
+    "intent": "booking",
+    "intent_prediction": {
+      "name": "pilih_tema_perjuangan",
+      "confidence": 0.48787713050842285
+    }
+  },
+  {
+    "text": "cerita horror",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "gimana cara bikin kopi?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "booking",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tempat wisata di bandung",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "info_lokasi",
+      "confidence": 0.999061644077301
+    }
+  },
+  {
+    "text": "cara menyuburkan tanaman",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "booking",
+      "confidence": 0.8297974467277527
+    }
+  },
+  {
+    "text": "cara melamar kerja",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "tanya_makna",
+      "confidence": 0.9999474287033081
+    }
+  },
+  {
+    "text": "asdfghjkl",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mahal banget sih",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "info_paket",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "repeat please",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "halo kak, mau nanya",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "bukan romantis, maksudku bukan itu",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "excuse me",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9999996423721313
+    }
+  },
+  {
+    "text": "selamat tinggal",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tentu saja",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9649741649627686
+    }
+  },
+  {
+    "text": "keep going",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.36353904008865356
+    }
+  },
+  {
+    "text": "nope",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9251487851142883
+    }
+  },
+  {
+    "text": "lain kali",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "keliru",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tidak setuju",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "informasi konsep",
+    "intent": "info_konsep",
+    "intent_prediction": {
+      "name": "tanya_makna",
+      "confidence": 0.9997878670692444
+    }
+  },
+  {
+    "text": "islam sama buddha",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.2735854983329773
+    }
+  },
+  {
+    "text": "first sight love",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "pdkt pertama langsung jodoh",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 0.9937711358070374
+    }
+  },
+  {
+    "text": "chemistry instant",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "meant to be",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.5666536688804626
+    }
+  },
+  {
+    "text": "tema yang sweet",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.8912290334701538
+    }
+  },
+  {
+    "text": "tolong pilih tema yang sweet dan lembut",
+    "intent": "pilih_tema_romantis",
+    "intent_prediction": {
+      "name": "pilih_tema_perdamaian",
+      "confidence": 0.8179931640625
+    }
+  },
+  {
+    "text": "kami ingin konsep penyatuan keluarga",
+    "intent": "pilih_tema_perdamaian",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.9999982118606567
+    }
+  },
+  {
+    "text": "tema cocok untuk pasangan survivor apa?",
+    "intent": "pilih_tema_perjuangan",
+    "intent_prediction": {
+      "name": "isi_kuesioner",
+      "confidence": 0.9903672933578491
+    }
+  },
+  {
+    "text": "mau konsultasi",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.8471980094909668
+    }
+  },
+  {
+    "text": "advice tema apa?",
+    "intent": "isi_kuesioner",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9985899329185486
+    }
+  },
+  {
+    "text": "apa makna tema perdamaian?",
+    "intent": "tanya_makna",
+    "intent_prediction": {
+      "name": "pilih_tema_perdamaian",
+      "confidence": 0.9649784564971924
+    }
+  },
+  {
+    "text": "cuaca di jakarta gimana?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 0.9869768023490906
+    }
+  },
+  {
+    "text": "oleh-oleh khas bali",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.7216624021530151
+    }
+  },
+  {
+    "text": "wowww",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "123456",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "cerita_kisah_cinta",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "stupid bot",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "info_konsep",
+      "confidence": 0.9654411673545837
+    }
+  },
+  {
+    "text": "tidak mengerti",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7279158234596252
+    }
+  },
+  {
+    "text": "legenda cinta ulun danu",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "jelaskan_legenda",
+      "confidence": 0.9999995231628418
+    }
+  },
+  {
+    "text": "kisah klasik bali yang romantis",
+    "intent": "kisah_cinta_bali",
+    "intent_prediction": {
+      "name": "pilih_tema_romantis",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "rekomendasi dari kisah",
+    "intent": "rekomendasi_dari_kisah",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.6666746139526367
+    }
+  },
+  {
+    "text": "mohon rekomendasi tema dari kisah Jayaprana–Layonsari",
+    "intent": "rekomendasi_dari_kisah",
+    "intent_prediction": {
+      "name": "jelaskan_legenda",
+      "confidence": 0.9674075841903687
+    }
+  },
+  {
+    "text": "mau cerita kisah cinta kami",
+    "intent": "cerita_kisah_cinta",
+    "intent_prediction": {
+      "name": "kisah_cinta_bali",
+      "confidence": 0.9999433755874634
+    }
+  }
+]

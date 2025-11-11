@@ -1,0 +1,676 @@
+version: "3.1"
+nlu:
+- intent: info_lokasi
+  examples: |
+    - lokasi foto dimana?
+    - ada lokasi apa?
+    - lokasi apa saja?
+    - lokasi per tema
+    - rekomendasi lokasi
+    - dimana tempatnya?
+    - shooting dimana?
+    - tempat prewedding
+- intent: tanya_makna
+  examples: |
+    - bedanya apa dengan biasa?
+    - apa kelebihannya?
+    - kenapa berbeda?
+    - kenapa legenda bali?
+    - mengapa storytelling?
+    - apa keunikan konsep ini?
+    - apa bedanya konsep ini?
+    - filosofi dibalik konsep
+- intent: booking
+  examples: |
+    - gimana caranya booking?
+    - saya tertarik
+    - kontak booking
+    - mau order
+    - cara booking
+    - cara reservasi
+    - contact person
+    - nomor yang bisa dihubungi?
+    - mau booking
+    - hubungi siapa?
+    - mau pesan
+- intent: info_konsep
+  examples: |
+    - tunjukin semua tema
+    - konsep apaan aja sih?
+    - mohon informasi konsep yang tersedia
+    - apa aja pilihannya?
+    - saya ingin mengetahui pilihan tema
+    - info konsep dong
+    - mau tau konsep
+    - konsepnya apa aja?
+    - ceritain konsep yang ada
+    - konsep prewedding bali
+    - cerita apa aja?
+    - tunjukkan semua konsep
+    - tema nya apa?
+    - tema apa yang tersedia?
+    - tema yang ada apa?
+    - konsep apa sih yang ada?
+    - ada tema apa?
+    - explain konsepnya
+    - ada konsep apa saja?
+- intent: affirm
+  examples: |
+    - iyaa
+    - lanjut
+    - yes
+    - baik
+    - josss
+    - yup
+    - yess
+    - yaudah
+    - betul
+    - gasss
+    - iya kak
+    - ya saya mau
+    - mantap
+    - yaaa
+    - okedeh
+    - inggih
+    - ok lanjutkan
+    - bener
+    - saya setuju
+    - baik silakan
+    - siap
+    - okeh
+    - oke
+    - nggih
+    - ok
+    - yep
+    - tepat
+    - ya ka
+    - ya
+    - iyap
+    - okee
+    - sudah benar
+    - persis
+    - benar sekali
+- intent: info_paket
+  examples: |
+    - daftar harga
+    - berapa duit nya?
+    - info harga
+    - harga pakeet
+    - estimasi budget yang diperlukan
+    - paket dan harga
+    - Info PAKET dong
+    - ada yang murah?
+    - berapa harganya?
+    - mohon informasi paket
+    - bisa dijelaskan daftar harga?
+    - budget minim bisa?
+    - budget brp ya?
+    - banding harga dong
+    - harga mulai dari berapa?
+    - paket apa saja?
+    - price nya gmn?
+    - ga terlalu mahal kan?
+    - brp hargany?
+    - paket apaa aja?
+    - murah ga?
+    - harganya gmn?
+    - biaya prewedding
+    - harga vs kompetitor
+    - harga paket
+    - price list
+    - lebih murah dari lain?
+    - info paket dong ka
+    - paket apa yg ada kak?
+    - ada paket apa?
+    - price list dong
+    - paketnya apa aja?
+    - biaya brp?
+    - paketnya AP aja?
+    - paketnya apaan aja?
+    - HARGA BERAPA?
+- intent: deny
+  examples: |
+    - belum yakin
+    - cancel
+    - bukan yang itu
+    - males
+    - kurang tepat
+    - pikir-pikir dulu
+    - tenten
+    - ga cocok
+    - skip
+    - nggak dulu
+    - ga ah
+    - belum
+    - next
+    - enggak
+    - nggak
+    - terima kasih, tapi tidak
+    - tidak itu bukan yang saya mau
+    - ga deh
+    - masih ragu
+    - nanti dulu
+    - ga
+    - tidak sesuai
+    - saya belum tertarik
+    - bukan maksud saya
+    - tidakk
+    - skip aja
+    - ogah
+    - gak
+    - no
+    - gaa
+    - nope
+    - kaga
+    - gaak
+    - salah
+    - itu salah
+    - bukan begitu
+- intent: goodbye
+  examples: |
+    - goodbye
+    - thank you
+    - maturnuwun
+    - tq
+    - thx
+    - clear
+    - sampai ketemu lagi
+    - oke makasih
+    - cukup segini dulu
+    - sudah dulu
+    - selamat tinggal
+    - udah jelas
+    - see you
+    - tengkyu
+    - terima kasih banyak
+    - oke understood
+    - oke fix
+    - sudah cukup
+    - cukup
+    - udah paham
+    - ok terima kasih
+    - noted thanks
+    - saya sudah mengerti
+    - keren makasih
+    - thanks a lot
+    - sudah jelas kok
+    - udah dulu ya
+    - dadah
+    - makasih
+    - deal terima kasih
+    - oke segitu aja
+    - sip makasih
+    - makasih ya
+    - suksma
+    - oke deh
+    - siap terima kasih
+    - segitu dulu
+    - thanks
+- intent: pilih_tema_romantis
+  examples: |
+    - vintage romantic
+    - first love theme
+    - fairytale vibes
+    - cinta sejati
+    - sweet romantic theme
+    - earthy romantic
+    - tema yang klasik romantis
+    - true love
+    - pure love
+    - soulmate vibes
+    - love at first sight
+    - takdir ilahi
+    - natural romantic
+    - romantic and soft
+    - natural beauty
+    - tema yang sweet
+    - tema yang manis
+    - bohemian romantic
+    - destiny love
+    - chemistry instant
+    - nature romantic
+    - graceful love
+    - meant to be
+    - gentle romantic
+    - romantic garden
+    - tema romantis
+    - organic love
+    - royal romantic
+    - jodoh dari lahir
+    - eternal love
+    - magical love
+    - princess and prince
+    - elegant romantic
+    - tema jodoh
+    - tema takdir
+    - soft color palette
+    - timeless love
+    - dreamy concept
+    - tema soft romantic
+    - innocent love
+    - cinta pertama
+    - everlasting love
+    - konsep yang lembut
+    - konsep putri ayu
+    - konsep princess
+- intent: pilih_tema_perdamaian
+  examples: |
+    - tema acceptance
+    - unconditional love
+    - tema philosophical
+    - celebrating diversity
+    - borderless love
+    - konsep penyatuan
+    - fusion culture
+    - pertemuan dua elemen
+    - tema yang powerful
+    - beda kepercayaan
+    - kami beda latar belakang
+    - embracing differences
+    - dramatic love
+    - beda keyakinan
+    - laut dan darat
+    - mixed marriage
+    - strong message
+    - bridge between worlds
+    - dramatic landscape
+    - powerful love story
+    - cliff and ocean
+    - cinta melebihi segalanya
+    - cinta tanpa batas
+    - sunset dramatic
+    - tema beach
+    - two elements unite
+    - tema yang kuat
+    - tema ocean
+    - konsep yang bermakna
+    - tema penerimaan
+    - different backgrounds
+    - campur budaya
+    - beda suku tapi cinta
+    - interfaith relationship
+    - two worlds one love
+    - konsep pantai
+    - limitless love
+    - tema dengan makna dalam
+    - deep meaning theme
+    - diverse love
+    - konsep dramatic
+    - konsep menyatukan perbedaan
+    - intercultural love
+    - golden hour powerful
+    - lintas budaya
+- intent: greet
+  examples: |
+    - salam pembuka
+    - punapi gatra
+    - met pagi
+    - siang gan
+    - halo
+    - met siang
+    - assalamualaikum
+    - halo min
+    - halo admin
+    - hai kak
+    - salam sejahtera
+    - p
+    - pagi kak
+    - pagi
+    - hi there
+    - morning
+    - hello
+    - selamat sore
+    - good morning
+    - hai 👋
+    - sore
+    - met sore
+    - salam kenal
+    - permisi min
+    - bisa kasih info?
+    - om swastyastu
+    - halo 😊
+    - selamat siang
+    - selamat pagi
+    - salam
+    - om santi santi om
+    - haloo
+    
+    - rahajeng wengi
+    - hallo
+    - siang
+    - sapunapi
+    - rahajeng semeng
+    - om suastiastu
+    - permisi
+    - selamat malam
+    - excuse me
+    
+- intent: isi_kuesioner
+  examples: |
+    - numpang tanya
+    - mau tanya-tanya
+    - mau tanya dong
+    - boleh nanya
+    - mohon bantuannya
+    - pengen tau info
+    - butuh bantuan
+    - bisa kasih info?
+- intent: pilih_tema_perjuangan
+  examples: |
+    - climbing together
+    - tema gunung
+    - konsep epic
+    - endurance love
+    - proud of our journey
+    - kami melewati badai
+    - tema bangga
+    - tema powerful journey
+    - tema petualang
+    - tema perjuangan
+    - partnership theme
+    - saling mendukung
+    - tema kedewasaan
+    - team work love
+    - lasting love
+    - warrior love
+    - tema ketahanan
+    - travel love story
+    - wanderlust couple
+    - support each other
+    - konsep journey
+    - transformation love
+    - tema kekuatan
+    - our battle scars
+    - konsep manik angkeran
+    - resilient love
+    - growing together
+    - through thick and thin
+    - struggle and triumph
+    - tema tantangan
+    - hiking love
+    - reaching summit
+    - we survived together
+    - evolved love
+    - tema kemenangan
+    - tema survival
+    - victory love
+    - kami bertahan
+    - strength in love
+    - konsep kuat
+    - triumph over adversity
+    - never give up love
+    - we made it
+    - tema growth
+    - kami sudah banyak rintangan
+    - adventurous theme
+    - tema achievement
+    - tema pejuang cinta
+    - accomplishment love
+    - tema transformasi
+- intent: out_of_scope
+  examples: |
+    - maksudnya gimana?
+    - cuaca hari ini gimana?
+    - kamu manusia?
+    - kurang jelas
+    - bodoh
+    - say again
+    - lowongan kerja apa?
+    - repeat please
+    - oleh-oleh khas bali
+    - harga mobil
+    - tidak mengerti
+    - resep masakan
+    - kamu cantik ga?
+    - ibukota bali dimana?
+    - vendor makeup dimana?
+    - explain lg dong
+    - kamu tinggal dimana?
+    - kabar kamu gimana?
+    - tiket masuk tanah lot
+    - teka teki
+    - tempat makan enak di bali
+    - berapa umur kamu?
+    - stupid bot
+    - cuaca hari ini
+    - asdfghjkl
+    - siapa yang buat kamu?
+    - apa?
+    - joke
+    - lowongan kerja
+    - jadwal kereta api
+    - apa kabar?
+    - benci deh
+    - berita hari ini
+    - mksdnya?
+    - mau nyanyi
+    - bisa dijelaskan lagi?
+    - hah?
+    - berita terkini
+    - udah makan belum?
+    - harga hp samsung berapa?
+    - tiket pesawat murah
+    - mahal banget sih
+    - bingung
+    - sehat?
+    - kamu jelek
+    - cara masak rendang
+    - kamu dimana?
+    - resep nasi goreng
+    - kamu manusia apa robot?
+    - hotel bali murah
+    - hari ini tanggal berapa?
+    - apa maksudmu?
+    - cerita horror
+    - joke lucu dong
+    - kamu siapa?
+    - wkwkwk
+    - what?
+    - sepak bola hari ini
+- intent: isi_kuesioner
+  examples: |
+    - tema mana ya yang bagus?
+    - cinta pandangan pertama, suggest tema ya
+    - tolong rekomendasikan
+    - bisa kasih masukan?
+    - rekomen dong
+    - kasih tau tema yang pas dong
+    - tema terbaik untuk kami apa?
+    - need help deciding
+    - tolong pilihkan tema
+    - suggest tema dong
+    - saran kamu apa?
+    - bisa bantu pilih?
+    - pilihkan tema untuk kami
+    - tolong lah kak
+    - pilihkan yang cocok
+    - perlu bantuan pilih tema
+    - minta saran tema
+    - guide me
+    - banyak pilihan jadi bingung
+    - tema apa yang pas untuk kami?
+    - rekomendasikan tema untuk saya
+    - tolong review cerita kami
+    - menurut kamu tema apa yang cocok?
+    - dari cerita kami cocok tema apa?
+    - mau dibantu pilih
+    - aku bingung pilih yang mana
+    - recommend tema yang mana?
+    - ga tau mau pilih apa
+    - minta tolong pilihkan
+    - kami LDR tolong rekomendasikan tema
+    - tema mana yang cocok?
+    - aku bingung
+    - untuk kami bagusnya tema apa?
+    - bantu pilih
+    - butuh bantuan pilih
+    - bantu saya pilih tema
+    - need help choosing
+    - pendapat kamu gimana?
+    - susah pilih
+    - saran tema dong
+    - analisis kisah cinta kami dong
+    - pls suggest tema
+    - tema apa yang pas buat kami?
+    - analyze dong cerita kami
+    - based on our story
+    - rekomendasiin dong
+    - mana yang paling pas?
+    - kasih rekomendasi dong
+    - tema yang cocok apa?
+    - rekomen dong bestie
+    - kami bingung pilih tema
+    - mohon berikan rekomendasi tema
+    - pilihkan yang terbaik
+    - help me decide
+    - help me choose
+    - minta pendapat
+    - bisa memberikan saran?
+    - gimme suggestion
+    - recommend tema
+    - saya memerlukan bantuan pemilihan konsep
+    - minta rekomendasi
+    - beda agama nih, tema apa yang cocok?
+    - guide me dong
+    - mau isi kuesioner
+    - tolong analisis
+    - bingung mau pilih yang mana
+    - assist me please
+    - match sama kami tema apa?
+    - insight dong tentang tema
+    - cocok tema apa buat kita?
+    - analyze dong
+    - tema ideal untuk kami?
+    - perlu guidance
+    - bantu dong
+    - kasih saran tema
+    - mau dibantu
+    - kalo menurut kamu?
+    - mau cari tema yang pas
+    - analyze our story
+    - isi kuesioner
+    - dimohon arahannya
+    - tolong carikan tema
+    - perfect match tema apa?
+    - need ur opinion
+- intent: cerita_kisah_cinta
+  examples: |
+    - perjalanan kami penuh liku
+    - kami melewati fase sulit bersama
+    - dia kuliah luar negeri
+    - drama terus tapi survive
+    - chat doang selama 2 tahun
+    - adoh teken ipun
+    - ketemu di cafe langsung saling lirik
+    - tantangan membuat kami lebih kuat
+    - badai sudah dilewati
+    - 1 taun baru ktmu
+    - jakarta bali jauh
+    - gap ekonomi besar
+    - kami LDR
+    - on off berkali-kali
+    - dia dari keluarga kaya saya biasa
+    - ketemu langsung naksir
+    - mixed marriage kami
+    - ipun ring Jakarta tiang ring Bali
+    - gue sama dia beda kepercayaan
+    - susah payah bangetttt
+    - orangtua sempat melarang
+    - ga mudah tapi worth it
+    - keluarga melarang karena beda budaya
+    - belum kenal lama tapi udah yakin
+    - miracle banget bisa bertahan
+    - beda religion
+    - seketika jatuh cinta
+    - gue yakin ini jodoh
+    - ujian demi ujian kami lalui
+    - ketemu lgsg naksir berat
+    - keluarga udah terima
+    - gue di jakarta dia di bali
+    - stalking terus jadi deket
+    - liat pertama kali langsung suka
+    - orangtua sekarang support
+    - kami interfaith couple
+    - soulmate
+    - drama abis tapi alhamdulillah
+    - perasaan cinta muncul saat pertemuan pertama
+    - hubungan jarak jauh
+    - 6 bulan baru ketemu
+    - perjuangan LDR 5 tahun
+    - hubungan kami dimulai dengan perasaan takdir
+    - beda kepercayaan tapi cinta
+    - kita beda agama cuy
+    - pasangan kami beda lokasi geografis
+    - kami menjalani hubungan jarak jauh
+    - langsung klik pas ketemu
+    - banyak omongan orang
+    - kite bede agame
+    - pdkt online dulu
+    - hubungan kami diuji berbagai hal
+    - fighting terus akhirnya menang
+    - banyak masalah tapi bertahan
+    - video call mulu
+    - pdkt pertama langsung jodoh
+    - vibes nya dah cocok dari sono
+    - dari awal ga direstui
+    - ga perlu lama untuk tau dia the one
+    - hampir menyerah tapi tetep bertahan
+    - pasangan kami memiliki perbedaan budaya
+    - ga nyangka bisa survive
+    - kami beda kota
+    - liat di IG langsung dm
+    - langsung jatuh cinta cuy
+    - pihak ketiga sering muncul
+    - chat an terus
+    - struggle banget tapi berhasil
+    - katolik sama muslim
+    - jawa sama bali
+    - kami dari budaya berbeda
+    - kami long distance
+    - hubungan kami terpisah jarak
+    - sunda sama batak
+    - keluarga kami memiliki perbedaan signifikan
+    - hubungan kami penuh tantangan
+    - keluarga kami beda latar belakang
+    - islam sama buddha
+    - dia di jakarta saya di bali
+    - kami tuh beda banget backgroundnya
+    - kami berasal dari latar belakang berbeda
+    - gosip dimana-mana
+    - kami ldr 3 tahun
+    - chemistry kami terasa instant
+    - perjuangan 5 tahun
+    - keluarga tidak restui
+    - terpesona pertama kali
+    - vc tiap hari
+    - dia overseas saya indonesia
+    - kami melewati banyak rintangan
+    - kita LDR gaes
+    - distance relationship
+    - kami beda negara
+    - online relationship
+    - hindu sama kristen
+    - struggle is real
+    - LDR susah tapi worth it
+    - ribet bgt awalnya
+    - keluarga tiang ten setuju
+    - first date langsung tau ini orangnya
+- synonym: ratu_pantai
+  examples: |
+    - ratu pantai kuta
+    - ratu pantai
+    - pantai kuta
+    - tema pantai
+    - konsep perdamaian
+- synonym: putri_ayu
+  examples: |
+    - putri ayu
+    - putri ayu bali
+    - tema romantis
+    - konsep takdir
+- synonym: manik_angkeran
+  examples: |
+    - manik angkeran
+    - tema perjuangan
+    - konsep transformasi
+    - tema gunung

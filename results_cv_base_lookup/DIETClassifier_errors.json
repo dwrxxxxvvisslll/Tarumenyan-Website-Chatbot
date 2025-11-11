@@ -1,0 +1,211 @@
+[
+  {
+    "text": "kisah Sastra Bali Modern",
+    "entities": [
+      {
+        "start": 6,
+        "end": 24,
+        "value": "modern_2011",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "butuh rekomendasi tema dari Sastra Bali Modern",
+    "entities": [
+      {
+        "start": 28,
+        "end": 46,
+        "value": "modern_2011",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ceritakan kisah jayaprana layonsari",
+    "entities": [
+      {
+        "start": 16,
+        "end": 35,
+        "value": "jayaprana layonsari",
+        "entity": "tema"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tolong jelaskan kisah jayaprana layonsari",
+    "entities": [
+      {
+        "start": 22,
+        "end": 41,
+        "value": "jayaprana layonsari",
+        "entity": "tema"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "makna dari legenda ulun danu apa?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 28,
+        "value": "ulun danu",
+        "entity": "tema"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tema",
+        "start": 19,
+        "end": 23,
+        "confidence_entity": 0.9088343977928162,
+        "value": "ulun",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cerita Kang Cing Wie",
+    "entities": [
+      {
+        "start": 7,
+        "end": 20,
+        "value": "sri_jaya_pangus",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "kisah Api Cinta di dasar hati",
+    "entities": [
+      {
+        "start": 6,
+        "end": 15,
+        "value": "api_cinta",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "kisah_id",
+        "start": 6,
+        "end": 9,
+        "confidence_entity": 0.8160563707351685,
+        "value": "Api",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cerita pribumi turis",
+    "entities": [
+      {
+        "start": 7,
+        "end": 20,
+        "value": "pribumi_turis",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "kisah_id",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.8152222633361816,
+        "value": "pribumi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "minta cerita dari sastra bali",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kisah_id",
+        "start": 18,
+        "end": 24,
+        "confidence_entity": 0.9766230583190918,
+        "value": "sastra",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "jelaskan kisah jayaprana dan layonsari",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "tema",
+        "start": 15,
+        "end": 38,
+        "confidence_entity": 0.9733019471168518,
+        "value": "jayaprana dan layonsari",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "kisah jayaprana layonsari",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "tema",
+        "start": 6,
+        "end": 25,
+        "confidence_entity": 0.9868131875991821,
+        "value": "jayaprana_layonsari",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "legenda cinta ulun danu",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "tema",
+        "start": 14,
+        "end": 23,
+        "confidence_entity": 0.995911717414856,
+        "value": "ulun_danu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mohon rekomendasi tema dari kisah Jayaprana–Layonsari",
+    "entities": [
+      {
+        "start": 34,
+        "end": 53,
+        "value": "sri_jaya_pangus",
+        "entity": "kisah_id"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "tema",
+        "start": 34,
+        "end": 53,
+        "confidence_entity": 0.7848414182662964,
+        "value": "sri_jaya_pangus",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

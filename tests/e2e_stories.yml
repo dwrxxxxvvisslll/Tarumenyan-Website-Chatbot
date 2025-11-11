@@ -1,0 +1,29 @@
+version: "3.1"
+stories:
+- story: e2e_konsep_rekom
+  steps:
+  - user: "halo"
+    intent: greet
+  - action: utter_greet
+  - user: "tunjukkan semua konsep"
+    intent: info_konsep
+  - action: utter_info_konsep
+  - user: "tema perdamaian"
+    intent: pilih_tema_perdamaian
+  - action: action_rekomendasi_tema
+
+- story: e2e_kisah_cinta_rekom
+  steps:
+  - user: "hai, mau konsultasi dulu"
+    intent: greet
+  - action: utter_greet
+  - user: "kami LDR dan beda kota, cocok tema apa?"
+    intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- story: e2e_out_of_scope_financial
+  steps:
+  - user: "harga saham BCA berapa?"
+    intent: out_of_scope
+  - action: action_handle_out_of_scope

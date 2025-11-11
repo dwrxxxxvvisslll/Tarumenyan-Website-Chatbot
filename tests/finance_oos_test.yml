@@ -1,0 +1,10 @@
+version: "3.1"
+
+nlu:
+- intent: finance_oos
+  examples: |
+    - harga saham BCA berapa
+    - berapa harga emas hari ini
+    - kurs rupiah ke dolar berapa
+    - suku bunga deposito sekarang berapa
+    - bitcoin lagi naik atau turun

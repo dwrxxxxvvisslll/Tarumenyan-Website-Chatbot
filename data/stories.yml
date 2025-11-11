@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+- story: flow dengan kuesioner lengkap
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: isi_kuesioner
+  - action: action_reset_kuesioner
+  - action: kuesioner_form
+  - active_loop: kuesioner_form
+  - active_loop: null
+  - action: utter_submit_form
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+  # Data riset disimpan melalui aturan setelah feedback form selesai
+
+- story: langsung cerita kisah cinta
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- story: tanya konsep dulu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_konsep
+  - action: utter_info_konsep
+  - intent: pilih_tema_perdamaian
+  - action: action_rekomendasi_tema
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+  - intent: affirm
+
+- story: user cerita perbedaan
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- story: user cerita ldr
+  steps:
+  - intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- story: user cerita takdir
+  steps:
+  - intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
+
+- story: user cerita perjuangan
+  steps:
+  - intent: cerita_kisah_cinta
+  - action: action_analisis_kisah_cinta
+  - action: action_rekomendasi_tema
