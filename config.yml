@@ -19,32 +19,29 @@ pipeline:
   min_ngram: 3
   max_ngram: 5
 - name: DIETClassifier
-  epochs: 85
+  epochs: 300
   constrain_similarities: true
-  learning_rate: 0.0018
-  dropout: 0.35
-  batch_size: [32, 64]
+  learning_rate: 0.002
+  dropout: 0.30
+  batch_size: [64, 128]
   random_seed: 42
   model_confidence: softmax
   entity_recognition: true
   hidden_layers_sizes:
     text: [256, 128]
-  transformer_size: 256
-  number_of_transformer_layers: 2
+  transformer_size: 384
+  number_of_transformer_layers: 3
+  
 - name: custom_components.restricted_keyword_intent_classifier.RestrictedKeywordIntentClassifier
   allowed_intents:
     - affirm
     - goodbye
+    - deny
   case_sensitive: false
   min_keyword_length: 4
   blocklist_keywords: ["ya", "iya", "oke", "ok", "baik", "sip", "betul", "benar"]
-- name: custom_components.intent_confidence_calibrator.IntentConfidenceCalibrator
-  temperature: 1.6
-  max_confidence: 0.92
 - name: EntitySynonymMapper
-- name: FallbackClassifier
-  threshold: 0.50
-  ambiguity_threshold: 0.10
+ 
 
 policies:
 - name: RulePolicy

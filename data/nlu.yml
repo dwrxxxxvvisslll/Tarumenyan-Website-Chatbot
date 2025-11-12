@@ -223,8 +223,6 @@ nlu:
     - matur suksma
     - goodbye
     - selamat tinggal
-
-    # Strong goodbye-only variants (avoid affirmation/ack phrases)
     - sampai jumpa lagi
     - see you later
     - sampai bertemu
