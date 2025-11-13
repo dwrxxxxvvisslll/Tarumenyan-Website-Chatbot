@@ -19,6 +19,8 @@ from .actions import (
     ActionDetailKonsep,
     ActionJelaskanLegenda,
     ActionSimpanDataRiset,
+    ActionInfoLokasiKontekstual,
+    ActionInfoPaketKontekstual,
 )
 
 

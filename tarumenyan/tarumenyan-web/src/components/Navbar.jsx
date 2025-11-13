@@ -4,9 +4,12 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import "./Navbar.css"
+import Chatbot from "../pages/Chatbot"
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [chatAnimating, setChatAnimating] = useState(false)
+  const [isChatOpen, setIsChatOpen] = useState(false)
   const { currentUser, logout, isAdmin } = useAuth()
   const navigate = useNavigate()
 
@@ -17,6 +20,20 @@ function Navbar() {
   const handleLogout = () => {
     logout()
     navigate("/")
+  }
+
+  const handleChatClick = (e) => {
+    e.preventDefault()
+    setChatAnimating(true)
+    setTimeout(() => {
+      setChatAnimating(false)
+      setIsMenuOpen(false)
+      setIsChatOpen(true)
+    }, 250)
+  }
+
+  const closeChat = () => {
+    setIsChatOpen(false)
   }
 
   return (
@@ -55,11 +72,7 @@ function Navbar() {
               FAQ
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/chat" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              Chat
-            </Link>
-          </li>
+          
           <li className="nav-item">
             <Link to="/about-us" className="nav-link" onClick={() => setIsMenuOpen(false)}>
               About Us
@@ -88,6 +101,25 @@ function Navbar() {
             </li>
           )}
         </ul>
+        <Link
+          to="/chat"
+          className={`floating-chat bubble-chat ${chatAnimating ? "animate" : ""}`}
+          onClick={handleChatClick}
+        >
+          <i className="fas fa-comment-dots bubble-icon" />
+          Ask Tarumenyan
+        </Link>
+        <div className={`chat-widget ${isChatOpen ? "open" : ""}`}>
+          <div className="chat-widget-header">
+            <div className="chat-title">Tarumenyan</div>
+            <button className="chat-close" onClick={closeChat} aria-label="Close">
+              <i className="fas fa-chevron-down" />
+            </button>
+          </div>
+          <div className="chat-widget-body">
+            <Chatbot embedded />
+          </div>
+        </div>
       </div>
     </nav>
   )

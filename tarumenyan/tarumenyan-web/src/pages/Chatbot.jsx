@@ -6,10 +6,13 @@ function uid() {
   return "tmn-" + Math.random().toString(36).slice(2, 10)
 }
 
-export default function Chatbot() {
+export default function Chatbot({ embedded = false }) {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const inputRef = useRef(null)
+  const bodyRef = useRef(null)
+  const endRef = useRef(null)
+  const [stickToBottom, setStickToBottom] = useState(true)
 
   const senderId = useMemo(() => {
     const existing = localStorage.getItem("rasa_sender_id")
@@ -38,8 +41,7 @@ export default function Chatbot() {
           const raw = await res.text()
           data = raw ? JSON.parse(raw) : []
         }
-      } catch (parseErr) {
-        // Jika respons tidak valid JSON, anggap tidak ada pesan balasan
+      } catch {
         data = []
       }
       const botMsgs = (Array.isArray(data) ? data : []).map((d) => ({
@@ -67,15 +69,64 @@ export default function Chatbot() {
     }
   }, [])
 
+  useEffect(() => {
+    const el = bodyRef.current
+    if (!el) return
+    if (stickToBottom) {
+      endRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [messages, stickToBottom])
+
+  function handleScroll() {
+    const el = bodyRef.current
+    if (!el) return
+    const gap = el.scrollHeight - el.scrollTop - el.clientHeight
+    setStickToBottom(gap < 24)
+  }
+
+  const styles = {
+    wrapper: embedded
+      ? { height: "100%", padding: 0, display: "flex", flexDirection: "column" }
+      : { display: "flex", justifyContent: "center", alignItems: "center", padding: "40px 16px" },
+    card: embedded
+      ? { width: "100%", height: "100%", border: "none", borderRadius: 0, boxShadow: "none", background: "#fff", display: "flex", flexDirection: "column" }
+      : { width: 560, maxWidth: "100%", border: "1px solid #e5e7eb", borderRadius: 12, boxShadow: "0 10px 25px rgba(0,0,0,0.08)", background: "#fff", display: "flex", flexDirection: "column" },
+    header: { padding: 12, borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center" },
+    status: { fontSize: 12, color: "#10b981" },
+    body: embedded
+      ? { padding: 12, display: "flex", gap: 8, flexDirection: "column", justifyContent: "flex-end", flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" }
+      : { padding: 12, height: 360, overflowY: "auto", display: "flex", gap: 8, flexDirection: "column", justifyContent: "flex-end", overscrollBehavior: "contain", WebkitOverflowScrolling: "touch" },
+    msg: { padding: "8px 12px", borderRadius: 12, maxWidth: "85%" },
+    user: { alignSelf: "flex-end", background: "#dbeafe" },
+    bot: { alignSelf: "flex-start", background: "#f3f4f6" },
+    footer: { display: "flex", gap: 8, padding: 12, borderTop: "1px solid #eee" },
+    input: { flex: 1, padding: "10px 12px", borderRadius: 8, border: "1px solid #ddd" },
+    button: { padding: "10px 16px", borderRadius: 8, border: "none", background: "#2563eb", color: "white", cursor: "pointer" },
+    note: { padding: "0 12px 12px", fontSize: 12, color: "#6b7280" },
+    buttons: { display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" },
+    quickButton: { padding: "6px 10px", borderRadius: 6, border: "1px solid #ddd", background: "#fff", cursor: "pointer" },
+    cardBox: { marginTop: 10, padding: 10, border: "1px solid #e5e7eb", borderRadius: 8, background: "#fff" },
+    cardTitle: { fontWeight: 600, marginBottom: 6 },
+    cardSection: { marginBottom: 6 },
+    cardDetails: { marginTop: 6 },
+    ctaLink: { display: "inline-block", marginTop: 8, color: "#2563eb" },
+    storyCard: { marginTop: 10, padding: 8, border: "1px dashed #d1d5db", borderRadius: 8 },
+    storyTitle: { fontWeight: 600, marginBottom: 4 },
+    storySource: { color: "#6b7280", marginTop: 4 },
+    storyActions: { display: "flex", gap: 8, marginTop: 8 },
+  }
+
   return (
     <div style={styles.wrapper}>
       <div style={styles.card}>
-        <div style={styles.header}>
-          <strong>Chat Tarumenyan</strong>
-          <span style={styles.status}>{loading ? "mengetik…" : "online"}</span>
-        </div>
+        {!embedded && (
+          <div style={styles.header}>
+            <strong>Chat Tarumenyan</strong>
+            <span style={styles.status}>{loading ? "mengetik…" : "online"}</span>
+          </div>
+        )}
 
-        <div style={styles.body}>
+        <div style={styles.body} ref={bodyRef} onScroll={handleScroll}>
           {messages.map((m, i) => (
             <div key={i} style={{ ...styles.msg, ...(m.from === "user" ? styles.user : styles.bot) }}>
               {m.image && <img src={m.image} alt="bot-image" style={{ maxWidth: "100%", borderRadius: 8 }} />}
@@ -165,6 +216,7 @@ export default function Chatbot() {
           )}
             </div>
           ))}
+          <div ref={endRef} />
         </div>
 
         <form
@@ -183,34 +235,8 @@ export default function Chatbot() {
             Kirim
           </button>
         </form>
-        <div style={styles.note}>Server Rasa: {RASA_URL}</div>
+        {!embedded && <div style={styles.note}>Server Rasa: {RASA_URL}</div>}
       </div>
     </div>
   )
-}
-
-const styles = {
-  wrapper: { display: "flex", justifyContent: "center", alignItems: "center", padding: "40px 16px" },
-  card: { width: 560, maxWidth: "100%", border: "1px solid #e5e7eb", borderRadius: 12, boxShadow: "0 10px 25px rgba(0,0,0,0.08)", background: "#fff" },
-  header: { padding: 12, borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center" },
-  status: { fontSize: 12, color: "#10b981" },
-  body: { padding: 12, height: 360, overflowY: "auto", display: "flex", gap: 8, flexDirection: "column" },
-  msg: { padding: "8px 12px", borderRadius: 12, maxWidth: "85%" },
-  user: { alignSelf: "flex-end", background: "#dbeafe" },
-  bot: { alignSelf: "flex-start", background: "#f3f4f6" },
-  footer: { display: "flex", gap: 8, padding: 12, borderTop: "1px solid #eee" },
-  input: { flex: 1, padding: "10px 12px", borderRadius: 8, border: "1px solid #ddd" },
-  button: { padding: "10px 16px", borderRadius: 8, border: "none", background: "#2563eb", color: "white", cursor: "pointer" },
-  note: { padding: "0 12px 12px", fontSize: 12, color: "#6b7280" },
-  buttons: { display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" },
-  quickButton: { padding: "6px 10px", borderRadius: 6, border: "1px solid #ddd", background: "#fff", cursor: "pointer" },
-  cardBox: { marginTop: 10, padding: 10, border: "1px solid #e5e7eb", borderRadius: 8, background: "#fff" },
-  cardTitle: { fontWeight: 600, marginBottom: 6 },
-  cardSection: { marginBottom: 6 },
-  cardDetails: { marginTop: 6 },
-  ctaLink: { display: "inline-block", marginTop: 8, color: "#2563eb" },
-  storyCard: { marginTop: 10, padding: 8, border: "1px dashed #d1d5db", borderRadius: 8 },
-  storyTitle: { fontWeight: 600, marginBottom: 4 },
-  storySource: { color: "#6b7280", marginTop: 4 },
-  storyActions: { display: "flex", gap: 8, marginTop: 8 },
 }

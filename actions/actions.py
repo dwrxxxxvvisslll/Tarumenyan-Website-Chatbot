@@ -1,7 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction
+from rasa_sdk.events import SlotSet, FollowupAction, ActiveLoop
 import re
 import pandas as pd
 from datetime import datetime
@@ -518,8 +518,20 @@ class ActionDetailKonsep(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        tema = tracker.get_slot("tema") or tracker.get_slot("rekomendasi_tema") or "ratu_pantai"
+        tema_slot = tracker.get_slot("tema") or tracker.get_slot("rekomendasi_tema")
+        kisah_id = (tracker.get_slot("kisah_id") or "").strip()
         budget = tracker.get_slot("budget") or "b"
+
+        if tema_slot:
+            tema = tema_slot
+        else:
+            mapping = {
+                "pribumi_turis": "ratu_pantai",
+                "sri_jaya_pangus": "sri_jaya_pangus",
+                "api_cinta": "jayaprana_layonsari",
+                "modern_2011": "putri_ayu",
+            }
+            tema = mapping.get(kisah_id, "ratu_pantai")
 
         details = {
             "ratu_pantai": {
@@ -607,7 +619,10 @@ class ActionDetailKonsep(Action):
         }
 
         dispatcher.utter_message(json_message=custom_payload)
-        return []
+        events: List[Dict[Text, Any]] = []
+        if tracker.get_slot("tema") != tema:
+            events.append(SlotSet("tema", tema))
+        return events
 
 
 class ActionJelaskanLegenda(Action):
@@ -1017,3 +1032,75 @@ class ActionRekomendasiDariKisah(Action):
         # Set slot tema lalu tampilkan detail konsep yang sudah ada
         dispatcher.utter_message(text=f"Saya merekomendasikan tema: {tema.replace('_', ' ').title()} berdasarkan kisah yang dipilih.")
         return [SlotSet("tema", tema), FollowupAction("action_detail_konsep")]
+
+class ActionInfoLokasiKontekstual(Action):
+    def name(self) -> Text:
+        return "action_info_lokasi_kontekstual"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        text = (tracker.latest_message.get("text") or "").lower()
+        prev = tracker.get_slot("lokasi_kategori") or ""
+        tema = tracker.get_slot("tema") or ""
+        cat = ""
+        if any(k in text for k in ["pantai", "kuta", "melasti", "tanah lot", "uluwatu", "sanur", "nusa dua"]):
+            cat = "pantai"
+        elif any(k in text for k in ["gunung", "batur", "campuhan", "sekumpul", "ridge"]):
+            cat = "gunung"
+        elif any(k in text for k in ["danau", "beratan", "ulun danu", "danu"]):
+            cat = "danau"
+        elif prev:
+            cat = prev
+        elif tema in ["ratu_pantai"]:
+            cat = "pantai"
+        elif tema in ["manik_angkeran"]:
+            cat = "gunung"
+        elif tema in ["ulun_danu"]:
+            cat = "danau"
+        else:
+            cat = "pantai"
+        by_cat = {
+            "pantai": "• Pantai Kuta\n• Pantai Melasti\n• Pura Tanah Lot",
+            "gunung": "• Gunung Batur\n• Air Terjun Sekumpul\n• Campuhan Ridge",
+            "danau": "• Ulun Danu Beratan\n• Danau Batur",
+        }
+        msg_map = {
+            "pantai": "📍 LOKASI PANTAI\n\n",
+            "gunung": "📍 LOKASI GUNUNG\n\n",
+            "danau": "📍 LOKASI DANAU\n\n",
+        }
+        body = msg_map.get(cat, msg_map["pantai"]) + by_cat.get(cat, by_cat["pantai"]) + "\n\nLokasi bisa disesuaikan dengan tema dan budget. Mau lihat detail konsepnya?"
+        buttons = [
+            {"title": "Detail konsep", "payload": "/lihat_detail_konsep"},
+            {"title": "Analisis kisah kami", "payload": "/isi_kuesioner"},
+            {"title": "Info paket", "payload": "/info_paket"},
+        ]
+        dispatcher.utter_message(text=body, buttons=buttons)
+        return [SlotSet("lokasi_kategori", cat), ActiveLoop(None), SlotSet("requested_slot", None)]
+
+class ActionInfoPaketKontekstual(Action):
+    def name(self) -> Text:
+        return "action_info_paket_kontekstual"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        cat = tracker.get_slot("lokasi_kategori") or ""
+        label = "pantai" if cat == "pantai" else "gunung" if cat == "gunung" else "lokasi"
+        text = (
+            "💼 INFO PAKET & HARGA\n\n"
+            + "• BASIC — Rp 4.500.000\n  1 "
+            + label
+            + ", 4 jam, 50+ foto\n\n  Cocok untuk pasangan dengan waktu terbatas.\n\n"
+            + "• PREMIUM — Rp 8.500.000\n  2 "
+            + label
+            + ", 6 jam, 100+ foto, MUA, video 2 menit\n\n  Paket paling populer, balance hasil & harga.\n\n"
+            + "• DIAMOND — Rp 15.000.000\n  3 "
+            + label
+            + ", 8–10 jam, 150+ foto, full team, video 5 menit\n\n  Maksimalkan storytelling konsep legenda.\n\n"
+            + "Mau saya bantu rekomendasikan paket berdasarkan tema dan budget?"
+        )
+        buttons = [
+            {"title": "Analisis kisah kami", "payload": "/isi_kuesioner"},
+            {"title": "Lihat detail konsep", "payload": "/lihat_detail_konsep"},
+            {"title": "Booking sekarang", "payload": "/booking"},
+        ]
+        dispatcher.utter_message(text=text, buttons=buttons)
+        return []

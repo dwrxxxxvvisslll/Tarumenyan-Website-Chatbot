@@ -32,6 +32,10 @@ slots:
     mappings:
     - type: from_entity
       entity: tema
+  lokasi_kategori:
+    type: text
+    mappings:
+    - type: custom
   nama_pasangan:
     type: text
     mappings:
@@ -240,6 +244,8 @@ responses:
       payload: "/lihat_detail_konsep"
 forms:
   kuesioner_form:
+    ignored_intents:
+    - info_lokasi
     required_slots:
     - nama_pasangan
     - kisah_cinta
@@ -263,6 +269,8 @@ actions:
   - action_reset_kuesioner
   - validate_kuesioner_form
   - validate_feedback_form
+  - action_info_lokasi_kontekstual
+  - action_info_paket_kontekstual
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

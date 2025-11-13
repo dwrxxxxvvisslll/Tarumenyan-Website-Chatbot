@@ -48,10 +48,10 @@ rules:
   - action: action_default_fallback
 
 # Info paket harga dan benefit
-- rule: Tampilkan info paket
+- rule: Tampilkan info paket kontekstual
   steps:
   - intent: info_paket
-  - action: utter_info_paket
+  - action: action_info_paket_kontekstual
 
 # Info konsep prewedding legenda Bali
 - rule: Tampilkan info konsep
@@ -60,10 +60,20 @@ rules:
   - action: utter_info_konsep
 
 # Info lokasi pemotretan yang direkomendasikan
-- rule: Tampilkan info lokasi
+- rule: Tampilkan info lokasi kontekstual
   steps:
   - intent: info_lokasi
-  - action: utter_info_lokasi
+  - action: action_info_lokasi_kontekstual
+
+# Info lokasi saat kuesioner aktif (interupsi form)
+- rule: Tampilkan info lokasi saat kuesioner aktif
+  condition:
+  - active_loop: kuesioner_form
+  steps:
+  - intent: info_lokasi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_info_lokasi_kontekstual
 
 # Alur booking cepat dengan CTA ke WhatsApp
 - rule: Proses booking
