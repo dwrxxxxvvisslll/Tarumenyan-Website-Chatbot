@@ -44,10 +44,10 @@ print_header() {
     echo ""
 }
 
-# Check if running as root
+# Allow running as root (for VPS deployment convenience)
 if [ "$EUID" -eq 0 ]; then
-    print_error "Please do not run this script as root. Run as normal user (Wiradanaputra)"
-    exit 1
+    print_warning "Running as root. This is allowed but not recommended for production."
+    print_warning "Creating directory with proper permissions..."
 fi
 
 print_header "🚀 TARUMENYAN CHATBOT - AUTOMATED DEPLOYMENT"
