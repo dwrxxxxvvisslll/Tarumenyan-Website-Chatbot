@@ -57,6 +57,10 @@ app.use('/api/faq', faqRouter);
 const reviewRouter = require('./routes/review');
 app.use('/api/reviews', reviewRouter);
 
+// Tambahkan route untuk chat history
+const chatHistoryRouter = require('./routes/chatHistory');
+app.use('/api/chat-history', chatHistoryRouter);
+
 app.listen(3001, () => {
   console.log("Server backend running on http://localhost:3001");
 });

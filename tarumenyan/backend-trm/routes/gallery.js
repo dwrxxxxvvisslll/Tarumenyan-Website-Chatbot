@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../db");
+const supabase = require("../db");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
@@ -35,60 +35,89 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-const upload = multer({ 
+const upload = multer({
   storage: storage,
   fileFilter: fileFilter
 });
 
 // Get all gallery items
-router.get("/", (req, res) => {
-  db.query("SELECT * FROM gallery ORDER BY created_at DESC", (err, results) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json(results);
-  });
+router.get("/", async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from("gallery")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Database error:", error);
+      return res.status(500).json({ error: error.message });
+    }
+
+    res.json(data);
+  } catch (err) {
+    console.error("Error fetching gallery:", err);
+    return res.status(500).json({ error: "Server error" });
+  }
 });
 
 // Add new item with image upload (Admin only)
-router.post("/", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
+router.post("/", authenticateToken, requireAdmin, upload.single("image"), async (req, res) => {
   const { title, category } = req.body;
   const image = req.file ? `/uploads/gallery/${path.basename(req.file.path)}` : null;
-  const created_at = new Date();
-  
+
   if (!image) {
     return res.status(400).json({ error: "Image is required" });
   }
-  
-  db.query(
-    "INSERT INTO gallery (title, category, image, created_at) VALUES (?, ?, ?, ?)",
-    [title, category, image, created_at],
-    (err, result) => {
-      if (err) return res.status(500).json({ error: err.message });
 
-      // Return the new record
-      db.query("SELECT * FROM gallery WHERE id = ?", [result.insertId], (err2, rows) => {
-        if (err2) return res.status(500).json({ error: err2.message });
-        res.status(201).json(rows[0]);
-      });
+  try {
+    const { data, error } = await supabase
+      .from("gallery")
+      .insert([
+        {
+          title,
+          category,
+          image
+        }
+      ])
+      .select();
+
+    if (error) {
+      console.error("Insert error:", error);
+      return res.status(500).json({ error: error.message });
     }
-  );
+
+    res.status(201).json(data[0]);
+  } catch (err) {
+    console.error("Error creating gallery item:", err);
+    return res.status(500).json({ error: "Server error" });
+  }
 });
 
 // Update an item with image upload (Admin only)
-router.put("/:id", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
+router.put("/:id", authenticateToken, requireAdmin, upload.single("image"), async (req, res) => {
   const { id } = req.params;
   const { title, category } = req.body;
-  
-  // Jika ada file baru yang diupload
-  if (req.file) {
-    const image = `/uploads/gallery/${path.basename(req.file.path)}`;
-    
-    // Cek apakah ada gambar lama yang perlu dihapus
-    db.query("SELECT image FROM gallery WHERE id = ?", [id], (err, results) => {
-      if (err) return res.status(500).json({ error: err.message });
-      
-      const oldImage = results[0]?.image;
+
+  try {
+    // Jika ada file baru yang diupload
+    if (req.file) {
+      const image = `/uploads/gallery/${path.basename(req.file.path)}`;
+
+      // Cek apakah ada gambar lama yang perlu dihapus
+      const { data: existingItem, error: fetchError } = await supabase
+        .from("gallery")
+        .select("image")
+        .eq("id", id)
+        .single();
+
+      if (fetchError) {
+        console.error("Fetch error:", fetchError);
+        return res.status(500).json({ error: fetchError.message });
+      }
+
+      const oldImage = existingItem?.image;
       if (oldImage && (oldImage.startsWith('/uploads/') || oldImage.startsWith('/assets/'))) {
-        const oldImagePath = oldImage.startsWith('/uploads/') 
+        const oldImagePath = oldImage.startsWith('/uploads/')
           ? path.join(__dirname, '..', oldImage)
           : path.join(__dirname, '../..', oldImage);
         // Hapus file lama jika ada
@@ -96,45 +125,63 @@ router.put("/:id", authenticateToken, requireAdmin, upload.single("image"), (req
           fs.unlinkSync(oldImagePath);
         }
       }
-      
+
       // Update dengan gambar baru
-      db.query(
-        "UPDATE gallery SET title = ?, category = ?, image = ? WHERE id = ?",
-        [title, category, image, id],
-        (err, result) => {
-          if (err) return res.status(500).json({ error: err.message });
-          if (result.affectedRows === 0) return res.status(404).json({ error: "Item not found" });
-          
-          // Return the updated record
-          db.query("SELECT * FROM gallery WHERE id = ?", [id], (err2, rows) => {
-            if (err2) return res.status(500).json({ error: err2.message });
-            res.json(rows[0]);
-          });
-        }
-      );
-    });
-  } else {
-    // Update tanpa mengubah gambar
-    db.query(
-      "UPDATE gallery SET title = ?, category = ? WHERE id = ?",
-      [title, category, id],
-      (err) => {
-        if (err) return res.status(500).json({ error: err.message });
-        res.json({ success: true });
+      const { data, error } = await supabase
+        .from("gallery")
+        .update({ title, category, image })
+        .eq("id", id)
+        .select();
+
+      if (error) {
+        console.error("Update error:", error);
+        return res.status(500).json({ error: error.message });
       }
-    );
+
+      if (!data || data.length === 0) {
+        return res.status(404).json({ error: "Item not found" });
+      }
+
+      res.json(data[0]);
+    } else {
+      // Update tanpa mengubah gambar
+      const { data, error } = await supabase
+        .from("gallery")
+        .update({ title, category })
+        .eq("id", id)
+        .select();
+
+      if (error) {
+        console.error("Update error:", error);
+        return res.status(500).json({ error: error.message });
+      }
+
+      res.json({ success: true });
+    }
+  } catch (err) {
+    console.error("Error updating gallery item:", err);
+    return res.status(500).json({ error: "Server error" });
   }
 });
 
 // Delete an item (Admin only)
-router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
+router.delete("/:id", authenticateToken, requireAdmin, async (req, res) => {
   const { id } = req.params;
-  
-  // Cek apakah ada gambar yang perlu dihapus
-  db.query("SELECT image FROM gallery WHERE id = ?", [id], (err, results) => {
-    if (err) return res.status(500).json({ error: err.message });
-    
-    const image = results[0]?.image;
+
+  try {
+    // Cek apakah ada gambar yang perlu dihapus
+    const { data: existingItem, error: fetchError } = await supabase
+      .from("gallery")
+      .select("image")
+      .eq("id", id)
+      .single();
+
+    if (fetchError) {
+      console.error("Fetch error:", fetchError);
+      return res.status(500).json({ error: fetchError.message });
+    }
+
+    const image = existingItem?.image;
     if (image) {
       let imagePath;
       if (image.startsWith('/uploads/')) {
@@ -142,19 +189,29 @@ router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
       } else if (image.startsWith('/assets/')) {
         imagePath = path.join(__dirname, '../..', image);
       }
-      
+
       // Hapus file jika ada dan path valid
       if (imagePath && fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
       }
     }
-    
+
     // Hapus data dari database
-    db.query("DELETE FROM gallery WHERE id = ?", [id], (err) => {
-      if (err) return res.status(500).json({ error: err.message });
-      res.json({ success: true });
-    });
-  });
+    const { error } = await supabase
+      .from("gallery")
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      console.error("Delete error:", error);
+      return res.status(500).json({ error: error.message });
+    }
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error deleting gallery item:", err);
+    return res.status(500).json({ error: "Server error" });
+  }
 });
 
 module.exports = router;
