@@ -15,13 +15,6 @@ nlu:
 - regex: motif_tema
   examples: |
     - (?i)\b(tema|konsep|romantis|perdamaian|perjuangan|fairytale|soft|dramatic|unity|classic|vintage|bohemian)\b
-# Targeted cues to strengthen theme intent separation
-- regex: tema_perdamaian_cues
-  examples: |
-    - (?i)\b(perdamaian|damai|penyatuan|penerimaan|unity|acceptance|celebrating\s+diversity|satu|menyatukan|mempersatukan)\b
-- regex: tema_perjuangan_cues
-  examples: |
-    - (?i)\b(perjuangan|struggle|journey|transformasi|transformation|petualangan|epic|survivor|ketahanan|kekuatan|pendakian|mendaki|pencapaian|achievement)\b
 # Lookup tables for stronger theme separation
 - lookup: tema_perdamaian_words
   examples: |
@@ -70,18 +63,6 @@ nlu:
 - regex: motif_makna
   examples: |
     - (?i)\b(makna|arti|filosofi|maksud|meaning|pesan|simbol)\b
-- regex: motif_affirm
-  examples: |
-    - (?i)\b(ya|iya|ok|oke|yup|yep|yap|betul|setuju|lanjut|siap|baik|mantap|deal|terima\s+kasih|makasih|thanks|thank\s+you)\b
-- regex: motif_deny
-  examples: |
-    - (?i)\b(tidak|enggak|nggak|ga|gak|jangan|stop|batal|cancel|skip|no|bukan|tak)\b
-- regex: motif_goodbye
-  examples: |
-    - (?i)\b(bye|sampai\s+jumpa|sampai\s+ketemu|selesai|cukup|udah\s+dulu|segi?tu\s+dulu)\b
-- regex: motif_greet
-  examples: |
-    - (?i)\b(hai|halo|hallo|hello|hei|hey|permisi|assalamualaikum|salam|selamat\s+(pagi|siang|sore|malam)|pagi|siang|sore|malam|shalom|om\s+swa?styastu|rahajeng)\b
 - lookup: affirm_markers
   examples: |
     - ya

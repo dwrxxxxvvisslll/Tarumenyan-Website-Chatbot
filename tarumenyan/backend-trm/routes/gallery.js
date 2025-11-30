@@ -4,6 +4,7 @@ const db = require("../db");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { authenticateToken, requireAdmin } = require("../middleware/auth");
 
 // Konfigurasi penyimpanan untuk multer
 const storage = multer.diskStorage({
@@ -47,8 +48,8 @@ router.get("/", (req, res) => {
   });
 });
 
-// Add new item with image upload
-router.post("/", upload.single("image"), (req, res) => {
+// Add new item with image upload (Admin only)
+router.post("/", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
   const { title, category } = req.body;
   const image = req.file ? `/uploads/gallery/${path.basename(req.file.path)}` : null;
   const created_at = new Date();
@@ -72,8 +73,8 @@ router.post("/", upload.single("image"), (req, res) => {
   );
 });
 
-// Update an item with image upload
-router.put("/:id", upload.single("image"), (req, res) => {
+// Update an item with image upload (Admin only)
+router.put("/:id", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
   const { id } = req.params;
   const { title, category } = req.body;
   
@@ -125,8 +126,8 @@ router.put("/:id", upload.single("image"), (req, res) => {
   }
 });
 
-// Delete an item
-router.delete("/:id", (req, res) => {
+// Delete an item (Admin only)
+router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   
   // Cek apakah ada gambar yang perlu dihapus

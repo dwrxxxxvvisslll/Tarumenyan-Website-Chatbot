@@ -509,8 +509,8 @@ class ActionSimpanDataRiset(Action):
 
 
 class ActionDetailKonsep(Action):
-    """Tampilkan detail konsep dalam bentuk kartu (custom payload)"""
-    
+    """Tampilkan detail konsep lengkap dengan cerita dan referensi"""
+
     def name(self) -> Text:
         return "action_detail_konsep"
 
@@ -519,110 +519,180 @@ class ActionDetailKonsep(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         tema_slot = tracker.get_slot("tema") or tracker.get_slot("rekomendasi_tema")
-        kisah_id = (tracker.get_slot("kisah_id") or "").strip()
-        budget = tracker.get_slot("budget") or "b"
 
-        if tema_slot:
-            tema = tema_slot
-        else:
-            mapping = {
-                "pribumi_turis": "ratu_pantai",
-                "sri_jaya_pangus": "sri_jaya_pangus",
-                "api_cinta": "jayaprana_layonsari",
-                "modern_2011": "putri_ayu",
-            }
-            tema = mapping.get(kisah_id, "ratu_pantai")
-
-        details = {
+        # Detail lengkap setiap konsep dengan cerita dan referensi
+        all_concepts = {
             "ratu_pantai": {
-                "title": "Ratu Pantai Kuta",
-                "philosophy": "Cinta menyatukan dua dunia berbeda melalui perdamaian.",
-                "locations": ["Pantai Kuta", "Pantai Melasti", "Pura Tanah Lot"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000 (1 lokasi, 4 jam)",
-                    "b": "PREMIUM - Rp 8.500.000 (2 lokasi, 6 jam, video 2 menit)",
-                    "c": "DIAMOND - Rp 15.000.000 (3 lokasi, 8-10 jam, video 5 menit)",
-                },
-                "legend_summary": "Kisah ratu penjaga pantai yang membawa kedamaian di tengah perbedaan — simbol cinta yang menyatukan dua dunia.",
+                "emoji": "🌊",
+                "title": "RATU PANTAI KUTA",
+                "subtitle": "Cinta yang Mendamaikan Perbedaan",
+                "story": (
+                    "Legenda Ratu Pantai Kuta menceritakan sosok penjaga pantai yang membawa kedamaian "
+                    "di tengah perbedaan budaya dan latar belakang. Sang Ratu menyatukan dua dunia yang berbeda "
+                    "dengan kebijaksanaan dan cinta kasih, mengajarkan bahwa perbedaan bukan penghalang melainkan "
+                    "kekayaan yang harus dirayakan."
+                ),
+                "philosophy": "💭 Filosofi: Cinta sejati melampaui batasan agama, suku, dan budaya.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan beda latar belakang (agama/suku/budaya) yang ingin menonjolkan harmoni.",
+                "locations": "📍 Lokasi: Pantai Kuta • Pantai Melasti • Pura Tanah Lot",
+                "style": "🎨 Style: Sunset di pantai, warna pastel & emas, nuansa damai & elegan",
+                "source": "📖 Referensi: Sastra Bali - Cerita Rakyat Pantai Kuta"
             },
             "putri_ayu": {
-                "title": "Putri Ayu Bali",
-                "philosophy": "Cinta pada pandangan pertama dan keajaiban takdir.",
-                "locations": ["Tegalalang Rice Terrace", "Danau Beratan", "Taman Ujung"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000",
-                    "b": "PREMIUM - Rp 8.500.000",
-                    "c": "DIAMOND - Rp 15.000.000",
-                },
-                "legend_summary": "Putri jelita yang menyimbolkan cinta pada pandangan pertama — chemistry yang kuat dan natural.",
+                "emoji": "💎",
+                "title": "PUTRI AYU BALI",
+                "subtitle": "Cinta pada Pandangan Pertama",
+                "story": (
+                    "Putri Ayu adalah simbol kecantikan dan keanggunan Bali. Legenda menceritakan "
+                    "seorang putri jelita yang memiliki chemistry kuat dengan pasangannya sejak pertemuan pertama. "
+                    "Kisah ini menekankan takdir, keajaiban pertemuan, dan cinta yang tumbuh natural tanpa paksaan. "
+                    "Ini adalah cinta yang ditakdirkan — pure, elegan, dan penuh keajaiban."
+                ),
+                "philosophy": "💭 Filosofi: Takdir mempertemukan jiwa-jiwa yang saling melengkapi.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan yang percaya pada 'love at first sight' dan chemistry yang kuat.",
+                "locations": "📍 Lokasi: Tegalalang Rice Terrace • Danau Beratan • Taman Ujung",
+                "style": "🎨 Style: Elegant, fairytale vibes, warna soft & putih, nuansa romantis",
+                "source": "📖 Referensi: Cerita Rakyat Bali - Legenda Putri Kerajaan"
             },
             "manik_angkeran": {
-                "title": "Manik Angkeran",
-                "philosophy": "Cinta yang menguat melalui tantangan dan transformasi.",
-                "locations": ["Gunung Batur", "Sekumpul Waterfall", "Campuhan Ridge"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000",
-                    "b": "PREMIUM - Rp 8.500.000",
-                    "c": "DIAMOND - Rp 15.000.000",
-                },
-                "legend_summary": "Legenda pengorbanan dan perubahan diri — cinta yang matang karena melewati rintangan besar.",
-            },
-            "ulun_danu": {
-                "title": "Ulun Danu Beratan",
-                "philosophy": "Keseimbangan alam dan berkah kesuburan yang menghadirkan harmoni.",
-                "locations": ["Pura Ulun Danu Beratan", "Danau Beratan", "Kebun Raya Bedugul"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000",
-                    "b": "PREMIUM - Rp 8.500.000",
-                    "c": "DIAMOND - Rp 15.000.000",
-                },
-                "legend_summary": "Kisah keseimbangan dan penghormatan pada alam — suasana tenang dan sakral.",
-            },
-            "jayaprana_layonsari": {
-                "title": "Jayaprana & Layonsari",
-                "philosophy": "Kesetiaan abadi dan ketulusan yang menguatkan cinta.",
-                "locations": ["Pura Jayaprana (Teluk Terima)", "Taman Nasional Bali Barat", "Menjangan"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000",
-                    "b": "PREMIUM - Rp 8.500.000",
-                    "c": "DIAMOND - Rp 15.000.000",
-                },
-                "legend_summary": "Kisah tragis yang abadi — simbol komitmen, ketulusan, dan keindahan yang lahir dari ujian.",
+                "emoji": "🐉",
+                "title": "MANIK ANGKERAN",
+                "subtitle": "Cinta yang Menguat melalui Tantangan",
+                "story": (
+                    "Manik Angkeran adalah legenda tentang pengorbanan dan transformasi. "
+                    "Kisah ini menceritakan pasangan yang harus melewati berbagai rintangan besar — "
+                    "dari tantangan keluarga hingga ujian kehidupan yang berat. Namun setiap rintangan justru "
+                    "membuat cinta mereka semakin kuat dan matang. Ini adalah simbol ketahanan, komitmen, "
+                    "dan cinta yang tumbuh karena perjuangan."
+                ),
+                "philosophy": "💭 Filosofi: Cinta sejati diuji oleh waktu dan rintangan, bukan dihancurkan.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan LDR, perjuangan panjang, atau yang melewati banyak tantangan.",
+                "locations": "📍 Lokasi: Gunung Batur • Air Terjun Sekumpul • Campuhan Ridge",
+                "style": "🎨 Style: Dramatic, epic vibes, alam liar, warna gelap & kontras tinggi",
+                "source": "📖 Referensi: Sastra Bali - Legenda Manik Angkeran dan Pengorbanan"
             },
             "sri_jaya_pangus": {
-                "title": "Sri Jaya Pangus & Kang Cing Wie",
-                "philosophy": "Akulturasi dan pengorbanan yang melahirkan tradisi.",
-                "locations": ["Desa Batur", "Pura Beji", "Kintamani"],
-                "packages": {
-                    "a": "BASIC - Rp 4.500.000",
-                    "b": "PREMIUM - Rp 8.500.000",
-                    "c": "DIAMOND - Rp 15.000.000",
-                },
-                "legend_summary": "Cinta lintas budaya yang merayakan persatuan dan kehormatan nilai lokal.",
+                "emoji": "🕊️",
+                "title": "SRI JAYA PANGUS & KANG CING WIE",
+                "subtitle": "Akulturasi & Tradisi Lintas Budaya",
+                "story": (
+                    "Kisah cinta Raja Sri Jaya Pangus dengan Putri Kang Cing Wie dari Tiongkok "
+                    "adalah simbol akulturasi budaya. Pernikahan mereka melahirkan tradisi baru yang memadukan "
+                    "budaya Bali dan Tionghoa. Ini adalah cerita tentang pengorbanan, saling menghormati, "
+                    "dan kesetiaan yang melahirkan warisan budaya hingga kini."
+                ),
+                "philosophy": "💭 Filosofi: Cinta yang sejati merayakan perbedaan dan melahirkan tradisi baru.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan beda etnis/budaya yang ingin merayakan perpaduan tradisi.",
+                "locations": "📍 Lokasi: Pura Beji Kintamani • Desa Batur • Area Bali Aga",
+                "style": "🎨 Style: Traditional mix, warna merah-emas & putih, properti adat",
+                "source": "📖 Referensi: https://koranbuleleng.com/2019/09/20/akulturasi-budaya-dari-kisah-cinta-sri-jaya-pangus-dan-kang-cing-wie/"
+            },
+            "ulun_danu": {
+                "emoji": "🌿",
+                "title": "ULUN DANU BERATAN",
+                "subtitle": "Harmoni & Keseimbangan Alam",
+                "story": (
+                    "Legenda Ulun Danu mengisahkan keseimbangan antara manusia dan alam. "
+                    "Pura Ulun Danu Beratan dibangun untuk menghormati Dewi Danu, dewi air dan kesuburan. "
+                    "Konsep ini menekankan harmoni, ketenangan, dan penghormatan pada alam sebagai bagian "
+                    "dari perjalanan cinta yang seimbang dan damai."
+                ),
+                "philosophy": "💭 Filosofi: Cinta yang seimbang seperti harmoni alam — tenang, damai, dan berkelanjutan.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan yang mencintai alam, spiritualitas, dan ketenangan.",
+                "locations": "📍 Lokasi: Pura Ulun Danu Beratan • Danau Beratan • Kebun Raya Bedugul",
+                "style": "🎨 Style: Nature vibes, warna hijau & biru, suasana sejuk & sakral",
+                "source": "📖 Referensi: Legenda Dewi Danu & Keseimbangan Alam Bali"
+            },
+            "jayaprana_layonsari": {
+                "emoji": "🌺",
+                "title": "JAYAPRANA & LAYONSARI",
+                "subtitle": "Kesetiaan Abadi & Ketulusan",
+                "story": (
+                    "Jayaprana dan Layonsari adalah kisah cinta tragis yang abadi. "
+                    "Jayaprana, seorang pemuda tampan dan setia, jatuh cinta pada Layonsari. "
+                    "Namun cinta mereka diuji oleh pengkhianatan dan kematian. Kisah ini mengajarkan "
+                    "tentang kesetiaan yang tak tergoyahkan, ketulusan cinta, dan kenangan yang abadi "
+                    "melampaui kehidupan."
+                ),
+                "philosophy": "💭 Filosofi: Cinta sejati tidak mengenal akhir — kenangan dan komitmen tetap abadi.",
+                "cocok_untuk": "✨ Cocok untuk: Pasangan yang menekankan kesetiaan, komitmen mendalam, dan romansa timeless.",
+                "locations": "📍 Lokasi: Pura Jayaprana (Teluk Terima) • Taman Nasional Bali Barat • Pulau Menjangan",
+                "style": "🎨 Style: Emotional, timeless, warna natural & earth tone, nuansa melankolis indah",
+                "source": "📖 Referensi: https://tatkala.co/2021/01/04/api-cinta-di-dasar-hati-prihal-cinta-sejati-dalam-sastra-bali/"
             },
         }
 
-        d = details.get(tema, details["ratu_pantai"])
-        custom_payload = {
-            "type": "konsep_detail",
-            "tema": tema,
-            "title": d["title"],
-            "philosophy": d["philosophy"],
-            "legend_summary": d.get("legend_summary"),
-            "locations": d["locations"],
-            "packages": d["packages"],
-            "recommended_package": d["packages"].get(budget, d["packages"]["b"]),
-            "cta": {
-                "text": "Booking sekarang",
-                "href": "https://wa.me/6281236559230?text=Halo%20Tarumenyan%2C%20saya%20ingin%20booking",
-            },
-        }
+        # Jika ada tema specific di slot, tampilkan detail 1 konsep
+        if tema_slot and tema_slot in all_concepts:
+            concept = all_concepts[tema_slot]
+            message = f"""
+{concept['emoji']} {concept['title']}
+{concept['subtitle']}
 
-        dispatcher.utter_message(json_message=custom_payload)
-        events: List[Dict[Text, Any]] = []
-        if tracker.get_slot("tema") != tema:
-            events.append(SlotSet("tema", tema))
-        return events
+📖 CERITA LEGENDA:
+{concept['story']}
+
+{concept['philosophy']}
+
+{concept['cocok_untuk']}
+
+{concept['locations']}
+
+{concept['style']}
+
+{concept['source']}
+
+💰 PAKET PREWEDDING:
+• BASIC: Rp 4.500.000 (1 lokasi, 4 jam, 50+ foto)
+• PREMIUM: Rp 8.500.000 (2 lokasi, 6 jam, 100+ foto, video)
+• DIAMOND: Rp 15.000.000 (3 lokasi, 8-10 jam, 150+ foto, full team)
+
+📞 Booking: https://wa.me/6281236559230
+"""
+            dispatcher.utter_message(text=message.strip())
+
+            buttons = [
+                {"title": "Lihat konsep lain", "payload": "/info_konsep"},
+                {"title": "Analisis kisah kami", "payload": "/isi_kuesioner"},
+                {"title": "Info paket lengkap", "payload": "/info_paket"},
+            ]
+            dispatcher.utter_message(text="Pilih opsi berikut:", buttons=buttons)
+
+            return [SlotSet("tema", tema_slot)]
+
+        # Jika tidak ada tema, tampilkan SEMUA konsep (overview)
+        else:
+            intro = """
+✨ KONSEP PREWEDDING LEGENDA BALI ✨
+
+Berikut adalah 6 konsep prewedding kami yang terinspirasi dari legenda dan cerita cinta Bali. Setiap konsep memiliki filosofi dan style unik:
+"""
+            dispatcher.utter_message(text=intro.strip())
+
+            # Kirim overview singkat untuk semua konsep
+            for key, concept in all_concepts.items():
+                short_message = f"""
+{concept['emoji']} {concept['title']}
+{concept['subtitle']}
+
+{concept['story'][:150]}...
+
+{concept['cocok_untuk']}
+"""
+                dispatcher.utter_message(text=short_message.strip())
+
+            # Tampilkan buttons untuk pilih detail
+            buttons = [
+                {"title": "Detail Ratu Pantai", "payload": "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"},
+                {"title": "Detail Putri Ayu", "payload": "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"},
+                {"title": "Detail Manik Angkeran", "payload": "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"},
+                {"title": "Detail Sri Jaya Pangus", "payload": "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"},
+            ]
+
+            footer_text = "\nPilih salah satu untuk melihat detail lengkap, atau ketik 'analisis kisah kami' untuk rekomendasi tema!"
+            dispatcher.utter_message(text=footer_text, buttons=buttons)
+
+            return []
 
 
 class ActionJelaskanLegenda(Action):

@@ -4,6 +4,7 @@ const db = require("../db");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { authenticateToken, requireAdmin } = require("../middleware/auth");
 
 // Konfigurasi penyimpanan untuk multer
 const storage = multer.diskStorage({
@@ -31,17 +32,8 @@ router.get("/", (req, res) => {
   });
 });
 
-// Middleware untuk memeriksa apakah user adalah admin
-const isAdmin = (req, res, next) => {
-  const { role } = req.body.user || {};
-  if (role !== 'admin') {
-    return res.status(403).json({ error: 'Akses ditolak. Hanya admin yang diizinkan.' });
-  }
-  next();
-};
-
-// Add new review
-router.post("/", upload.single("image"), (req, res) => {
+// Add new review (Admin only)
+router.post("/", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
   const { name, service, location, rating, comment, date } = req.body;
   const image = req.file ? `/uploads/reviews/${path.basename(req.file.path)}` : null;
   const created_at = new Date();
@@ -62,8 +54,8 @@ router.post("/", upload.single("image"), (req, res) => {
   );
 });
 
-// Update a review
-router.put("/:id", upload.single("image"), (req, res) => {
+// Update a review (Admin only)
+router.put("/:id", authenticateToken, requireAdmin, upload.single("image"), (req, res) => {
   const { id } = req.params;
   const { name, service, location, rating, comment, date } = req.body;
   const formattedDate = date ? new Date(date) : null;
@@ -108,8 +100,8 @@ router.put("/:id", upload.single("image"), (req, res) => {
   }
 });
 
-// Delete a review
-router.delete("/:id", (req, res) => {
+// Delete a review (Admin only)
+router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   
   // Cek apakah ada gambar yang perlu dihapus

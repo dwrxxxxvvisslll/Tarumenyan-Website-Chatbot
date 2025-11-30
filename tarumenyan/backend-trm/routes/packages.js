@@ -4,6 +4,7 @@ const db = require("../db");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { authenticateToken, requireAdmin } = require("../middleware/auth");
 
 // Konfigurasi penyimpanan untuk multer
 const storage = multer.diskStorage({
@@ -43,9 +44,8 @@ router.get("/", (req, res) => {
   });
 });
 
-// Add new package
-router.post("/", (req, res) => {
-  console.log("BODY DITERIMA:", req.body); // Tambahan log
+// Add new package (Admin only)
+router.post("/", authenticateToken, requireAdmin, (req, res) => {
 
   const { name, price, description, features } = req.body;
 const popular = req.body.popular ?? false;
@@ -67,8 +67,8 @@ const popular = req.body.popular ?? false;
   );
 });
 
-// Edit package
-router.put("/:id", (req, res) => {
+// Edit package (Admin only)
+router.put("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   const { name, price, description, features } = req.body;
   const popular = req.body.popular ?? false;
@@ -91,8 +91,8 @@ router.put("/:id", (req, res) => {
   );
 });
 
-// Delete package
-router.delete("/:id", (req, res) => {
+// Delete package (Admin only)
+router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   db.query("DELETE FROM packages WHERE id = ?", [id], (err) => {
     if (err) {
@@ -103,8 +103,8 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-// Upload pricelist PDF
-router.post("/upload-pdf", upload.single("pricelist"), (req, res) => {
+// Upload pricelist PDF (Admin only)
+router.post("/upload-pdf", authenticateToken, requireAdmin, upload.single("pricelist"), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ success: false, error: "Tidak ada file yang diunggah" });
   }

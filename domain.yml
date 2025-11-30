@@ -156,31 +156,38 @@ responses:
       Om Shanti Shanti Shanti Om 🙏
   utter_info_konsep:
   - text: |-
-      ✨ KONSEP PREWEDDING LEGENDA BALI (Lengkap) ✨
+      ✨ KONSEP PREWEDDING LEGENDA BALI ✨
 
-      🌊 RATU PANTAI KUTA — Cinta yang Mendamaikan
+      Kami memiliki 6 konsep prewedding unik yang terinspirasi dari legenda Bali:
+
+      🌊 RATU PANTAI KUTA — Cinta yang Mendamaikan Perbedaan
+      Untuk: Pasangan beda latar belakang (agama/suku/budaya)
+
       💎 PUTRI AYU BALI — Cinta pada Pandangan Pertama
-      🐉 MANIK ANGKERAN — Cinta yang Menguat melalui Tantangan
-      🌿 ULUN DANU BERATAN — Harmoni & Keseimbangan Alam
-      🌺 JAYAPRANA–LAYONSARI — Kesetiaan Abadi & Ketulusan
-      🕊️ SRI JAYA PANGUS & KANG CING WIE — Akulturasi & Tradisi
+      Untuk: Pasangan yang percaya pada takdir & chemistry kuat
 
-      Mau lihat detail atau penjelasan legenda? Pilih tombol di bawah ini.
+      🐉 MANIK ANGKERAN — Cinta yang Menguat melalui Tantangan
+      Untuk: Pasangan LDR atau yang melewati banyak rintangan
+
+      🕊️ SRI JAYA PANGUS & KANG CING WIE — Akulturasi & Tradisi
+      Untuk: Pasangan beda etnis/budaya yang merayakan perpaduan
+
+      🌿 ULUN DANU BERATAN — Harmoni & Keseimbangan Alam
+      Untuk: Pasangan yang mencintai alam & spiritualitas
+
+      🌺 JAYAPRANA–LAYONSARI — Kesetiaan Abadi & Ketulusan
+      Untuk: Pasangan yang menekankan komitmen mendalam
+
+      Pilih "Lihat detail konsep" untuk cerita lengkap setiap legenda!
     buttons:
-    - title: "Detail Ratu Pantai"
-      payload: "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"
-    - title: "Detail Putri Ayu"
-      payload: "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"
-    - title: "Detail Manik Angkeran"
-      payload: "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"
-    - title: "Detail Ulun Danu"
-      payload: "/lihat_detail_konsep{\"tema\": \"ulun_danu\"}"
-    - title: "Detail Jayaprana–Layonsari"
-      payload: "/lihat_detail_konsep{\"tema\": \"jayaprana_layonsari\"}"
-    - title: "Detail Sri Jaya Pangus"
-      payload: "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"
-    - title: "Jelaskan legenda"
+    - title: "Lihat detail konsep"
+      payload: "/lihat_detail_konsep"
+    - title: "Analisis kisah kami"
+      payload: "/isi_kuesioner"
+    - title: "Jelaskan makna legenda"
       payload: "/jelaskan_legenda"
+    - title: "Info paket & harga"
+      payload: "/info_paket"
   utter_info_paket:
   - text: |-
       💼 INFO PAKET & HARGA

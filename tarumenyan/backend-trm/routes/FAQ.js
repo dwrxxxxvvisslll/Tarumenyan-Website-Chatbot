@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
+const { authenticateToken, requireAdmin } = require("../middleware/auth");
 
 // Get all FAQ items
 router.get("/", (req, res) => {
@@ -10,8 +11,8 @@ router.get("/", (req, res) => {
   });
 });
 
-// Add a new FAQ
-router.post("/", (req, res) => {
+// Add a new FAQ (Admin only)
+router.post("/", authenticateToken, requireAdmin, (req, res) => {
   const { question, answer } = req.body;
   db.query(
     "INSERT INTO faq (question, answer) VALUES (?, ?)",
@@ -23,8 +24,8 @@ router.post("/", (req, res) => {
   );
 });
 
-// Update an existing FAQ
-router.put("/:id", (req, res) => {
+// Update an existing FAQ (Admin only)
+router.put("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   const { question, answer } = req.body;
   db.query(
@@ -37,8 +38,8 @@ router.put("/:id", (req, res) => {
   );
 });
 
-// Delete a FAQ
-router.delete("/:id", (req, res) => {
+// Delete a FAQ (Admin only)
+router.delete("/:id", authenticateToken, requireAdmin, (req, res) => {
   const { id } = req.params;
   db.query("DELETE FROM faq WHERE id = ?", [id], (err) => {
     if (err) return res.status(500).json({ error: err.message });

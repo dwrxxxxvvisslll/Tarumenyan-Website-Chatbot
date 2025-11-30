@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+import PublicLayout from "./components/PublicLayout"
 import Home from "./pages/Home"
 import Gallery from "./pages/Gallery"
 import Pricelist from "./pages/Pricelist"
@@ -14,20 +13,12 @@ import { AuthProvider } from "./context/AuthContext"
 import { DataProvider } from "./context/DataContext"
 import ProtectedRoute from "./components/ProtectedRoute"
 
-// Import komponen admin dari folder admin-panel
-import ReviewManager from "./pages/admin-panel/ReviewManager"
-import FAQManager from "./pages/admin-panel/FAQManager"
-import PricelistManager from "./pages/admin-panel/PricelistManager"
-import GalleryManager from "./pages/admin-panel/GalleryManager"
-import Dashboard from "./pages/admin-panel/Dashboard"
-import AdminLayout from "./pages/admin-panel/AdminLayout"
-
-// Import komponen admin baru
-import AdminDashboardNew from "./pages/admin/AdminDashboardNew"
-import AdminGalleryNew from "./pages/admin/AdminGalleryNew"
-import AdminReviewNew from "./pages/admin/AdminReviewNew"
-import AdminFAQNew from "./pages/admin/AdminFAQNew"
-import AdminPricelistNew from "./pages/admin/AdminPricelistNew"
+// Import komponen admin
+import AdminDashboard from "./pages/admin/AdminDashboard"
+import AdminGallery from "./pages/admin/AdminGallery"
+import AdminReview from "./pages/admin/AdminReview"
+import AdminFAQ from "./pages/admin/AdminFAQ"
+import AdminPricelist from "./pages/admin/AdminPricelist"
 
 // Import komponen user
 import UserLayout from "./pages/User/UserLayout"
@@ -48,7 +39,7 @@ function App() {
               path="/admin"
               element={
                 <ProtectedRoute>
-                  <AdminDashboardNew />
+                  <AdminDashboard />
                 </ProtectedRoute>
               }
             />
@@ -56,7 +47,7 @@ function App() {
               path="/admin/gallery"
               element={
                 <ProtectedRoute>
-                  <AdminGalleryNew />
+                  <AdminGallery />
                 </ProtectedRoute>
               }
             />
@@ -64,7 +55,7 @@ function App() {
               path="/admin/pricelist"
               element={
                 <ProtectedRoute>
-                  <AdminPricelistNew />
+                  <AdminPricelist />
                 </ProtectedRoute>
               }
             />
@@ -72,7 +63,7 @@ function App() {
               path="/admin/faq"
               element={
                 <ProtectedRoute>
-                  <AdminFAQNew />
+                  <AdminFAQ />
                 </ProtectedRoute>
               }
             />
@@ -80,7 +71,7 @@ function App() {
               path="/admin/review"
               element={
                 <ProtectedRoute>
-                  <AdminReviewNew />
+                  <AdminReview />
                 </ProtectedRoute>
               }
             />
@@ -93,122 +84,15 @@ function App() {
             </Route>
 
             {/* Public Routes */}
-            <Route
-              path="/"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Home />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/gallery"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Gallery />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/pricelist"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Pricelist />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/review"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Review />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/faq"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <FAQ />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/about-us"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <AboutUs />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/chat"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Chatbot />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/login"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Login />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
-
-            <Route
-              path="/register"
-              element={
-                <div className="app">
-                  <Navbar />
-                  <main>
-                    <Register />
-                  </main>
-                  <Footer />
-                </div>
-              }
-            />
+            <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+            <Route path="/gallery" element={<PublicLayout><Gallery /></PublicLayout>} />
+            <Route path="/pricelist" element={<PublicLayout><Pricelist /></PublicLayout>} />
+            <Route path="/review" element={<PublicLayout><Review /></PublicLayout>} />
+            <Route path="/faq" element={<PublicLayout><FAQ /></PublicLayout>} />
+            <Route path="/about-us" element={<PublicLayout><AboutUs /></PublicLayout>} />
+            <Route path="/chat" element={<PublicLayout><Chatbot /></PublicLayout>} />
+            <Route path="/login" element={<PublicLayout><Login /></PublicLayout>} />
+            <Route path="/register" element={<PublicLayout><Register /></PublicLayout>} />
           </Routes>
         </Router>
       </DataProvider>

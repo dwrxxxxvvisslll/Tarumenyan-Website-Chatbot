@@ -1,0 +1,581 @@
+
+> tarumenyan-web@0.0.0 dev
+> vite
+
+
+  VITE v6.3.5  ready in 84 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:30 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:34 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:34 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:44 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:46 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:49 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:50 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:50 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:52 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:55:56 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:00 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:00 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:10 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:10 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:20 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:20 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:23 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:30 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:30 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:40 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:50 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:56:50 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:00 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:00 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:10 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:10 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:20 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:20 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:30 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:30 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:41 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:41 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:51 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:57:51 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:01 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:01 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:11 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:11 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:21 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:21 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:31 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:58:31 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:59:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+2:59:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:00:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:00:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:01:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:01:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:02:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:02:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:03:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:03:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:04:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:04:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:05:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:05:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:06:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:06:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:07:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:07:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:08:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:08:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:09:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:09:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:10:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:10:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:11:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:11:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:12:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:12:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:13:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:13:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:14:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:14:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:15:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:15:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:16:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:16:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:17:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:17:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:18:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:18:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:19:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:19:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:20:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:20:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:21:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:21:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:22:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:22:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:23:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:23:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:24:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:24:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:25:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:25:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:26:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:26:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:27:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+3:27:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:21 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:24 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:28 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:38 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:48 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:17:58 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:08 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:28 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:38 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:48 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:18:58 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:08 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:15 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:17 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:28 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:38 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:48 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:19:58 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:08 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:18 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:26 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:26 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:26 PM [vite] http proxy error: /webhooks/rest/webhook/status
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1139:18)
+    at afterConnectMultiple (node:net:1712:7)
+6:20:52 PM [vite] vite.config.js changed, restarting server...
+6:20:52 PM [vite] server restarted.
+6:21:37 PM [vite] vite.config.js changed, restarting server...
+6:21:37 PM [vite] server restarted.
