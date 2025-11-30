@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 const RASA_URL = import.meta.env.VITE_RASA_URL || "/api/rasa"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001"
 
 function uid() {
   return "tmn-" + Math.random().toString(36).slice(2, 10)
@@ -23,6 +24,35 @@ export default function Chatbot({ embedded = false }) {
     localStorage.setItem("rasa_sender_id", id)
     return id
   }, [])
+
+  // Session ID untuk grouping chat history
+  const sessionId = useMemo(() => {
+    const existing = sessionStorage.getItem("chat_session_id")
+    if (existing) return existing
+    const id = `session-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+    sessionStorage.setItem("chat_session_id", id)
+    return id
+  }, [])
+
+  // Save chat history to backend
+  async function saveChatHistory(userMessage, botResponse, intent = null, confidence = null) {
+    try {
+      await fetch(`${BACKEND_URL}/api/chat-history`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          session_id: sessionId,
+          user_message: userMessage,
+          bot_response: botResponse,
+          intent,
+          confidence
+        })
+      })
+    } catch (err) {
+      console.warn("Failed to save chat history:", err)
+      // Silently fail - tidak mengganggu user experience
+    }
+  }
 
   // Health check ke Rasa server
   async function checkRasaHealth() {
@@ -143,6 +173,12 @@ export default function Chatbot({ embedded = false }) {
 
       setMessages((prev) => [...prev, ...botMsgs])
       setConnectionStatus("online") // Mark as online jika berhasil
+
+      // Save chat history (ambil response pertama sebagai representasi)
+      const botResponseText = botMsgs.map(m => m.text).filter(Boolean).join(" | ")
+      const intent = data[0]?.metadata?.intent_name || null
+      const confidence = data[0]?.metadata?.confidence || null
+      saveChatHistory(text, botResponseText, intent, confidence)
 
     } catch (err) {
       console.error("Send message error:", err)
