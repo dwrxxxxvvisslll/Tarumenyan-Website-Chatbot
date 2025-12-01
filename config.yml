@@ -31,7 +31,9 @@ pipeline:
     text: [256, 128]
   transformer_size: 384
   number_of_transformer_layers: 3
-  
+- name: FallbackClassifier
+  threshold: 0.6
+  ambiguity_threshold: 0.1
 - name: custom_components.restricted_keyword_intent_classifier.RestrictedKeywordIntentClassifier
   allowed_intents:
     - affirm
@@ -45,8 +47,9 @@ pipeline:
 
 policies:
 - name: RulePolicy
-  core_fallback_threshold: 0.3
-  core_fallback_action_name: "action_handle_out_of_scope"
+  core_fallback_threshold: 0.6
+  core_fallback_action_name: "action_default_fallback"
+  enable_fallback_prediction: true
 - name: MemoizationPolicy
   max_history: 5
 - name: TEDPolicy
