@@ -76,3 +76,39 @@ stories:
   - action: action_deactivate_loop
   - active_loop: null
   - action: action_info_lokasi_kontekstual
+
+- story: user tanya prewedding umum
+  steps:
+  - intent: tanya_prewedding_umum
+  - action: utter_tanya_prewedding_umum
+
+- story: user tanya info paket
+  steps:
+  - intent: info_paket
+  - action: utter_info_paket
+
+- story: user tanya lokasi
+  steps:
+  - intent: info_lokasi
+  - action: utter_info_lokasi
+
+- story: greeting lalu tanya paket
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_paket
+  - action: utter_info_paket
+
+- story: greeting lalu tanya lokasi
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_lokasi
+  - action: utter_info_lokasi
+
+- story: greeting lalu tanya prewedding umum
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tanya_prewedding_umum
+  - action: utter_tanya_prewedding_umum

@@ -848,6 +848,7 @@ nlu:
 
 - intent: info_paket
   examples: |
+    - info paket
     - paket apa saja?
     - harga paket prewedding
     - info harga paket prewedding
@@ -892,6 +893,29 @@ nlu:
     - harga paket vs kompetitor
     - paket lebih murah dari yang lain?
     - banding harga paket dong
+    - berapa harga paket silver?
+    - paket gold harganya berapa?
+    - paket diamond berapa ya?
+    - paket platinum ada ga?
+    - mau tau harga semua paket
+    - paket mana yang paling worth it?
+    - paket termurah apa?
+    - paket paling mahal?
+    - include apa aja paket silver?
+    - paket gold dapet apa?
+    - benefit paket diamond
+    - fasilitas paket platinum
+    - beda paket silver dan gold apa?
+    - perbandingan paket silver vs gold
+    - mending ambil paket apa?
+    - recommend paket mana?
+    - untuk budget 10 juta paket apa?
+    - budget 15 juta bisa paket apa?
+    - paket 20 juta dapet apa?
+    - cari paket yang affordable
+    - paket hemat ada ga?
+    - paket premium berapa?
+    - paket basic mulai dari berapa?
 
 - intent: info_lokasi
   examples: |
@@ -936,6 +960,96 @@ nlu:
     - spot sunset bali dimana?
     - lokasi foto recommended?
     - mau tau tempat prewed yang cakep
+    - pengen prewedding di pantai
+    - mau foto di pantai
+    - pengen foto di tepi laut
+    - prewedding di gunung bisa ga?
+    - mau foto di puncak gunung
+    - lokasi outdoor yang bagus
+    - tempat foto outdoor bali
+    - spot foto keren di bali
+    - tempat romantis buat prewedding
+    - lokasi instagramable bali
+    - tempat sunset terbaik
+    - lokasi sunrise bagus dimana?
+    - mau foto di air terjun
+    - lokasi air terjun buat prewedding
+    - pengen foto di sawah
+    - lokasi sawah terasering
+    - tempat foto alam bali
+    - lokasi nature photography
+    - spot foto pantai kuta
+    - prewedding di uluwatu
+    - foto di tanah lot
+    - lokasi nusa penida bisa?
+    - tempat foto di sanur
+    - prewedding di ubud
+    - lokasi tegallalang rice terrace
+    - campuhan ridge walk untuk foto
+    - spot foto di seminyak
+    - lokasi foto di jimbaran
+    - tempat prewedding paling hits
+    - lokasi foto viral bali
+    - hidden gem lokasi foto bali
+    - tempat sepi buat foto
+
+- intent: tanya_prewedding_umum
+  examples: |
+    - prewedding itu apa sih?
+    - apa itu prewedding?
+    - jelaskan tentang prewedding
+    - prewedding untuk apa?
+    - kenapa harus prewedding?
+    - pentingnya prewedding
+    - manfaat prewedding
+    - apa beda prewedding dan wedding?
+    - prewedding bali seperti apa?
+    - keunikan prewedding bali
+    - apa yang special dari prewedding bali?
+    - prewedding dengan konsep legenda
+    - apa itu konsep legenda bali?
+    - kenapa pakai legenda bali?
+    - prewedding outdoor vs indoor
+    - kapan waktu terbaik prewedding?
+    - berapa lama sesi foto prewedding?
+    - persiapan apa yang diperlukan?
+    - outfit prewedding apa yang bagus?
+    - makeup prewedding gimana?
+    - tips prewedding yang bagus
+    - prewedding di bali butuh berapa hari?
+    - kalian provide makeup ga?
+    - kalian sediain baju ga?
+    - costume prewedding ada?
+    - properti foto ada?
+    - boleh bawa properti sendiri?
+    - bisa request pose tertentu?
+    - hasil fotonya berapa lama jadi?
+    - dapet berapa foto?
+    - foto digital atau cetak?
+    - album foto termasuk ga?
+    - video prewedding ada?
+    - cinematic video tersedia?
+    - drone shot ada ga?
+    - photographer berapa orang?
+    - tim shooting berapa orang?
+    - bisa pilih fotografer?
+    - pengalaman fotografer berapa tahun?
+    - portofolio bisa diliat?
+    - hasil foto sebelumnya ada?
+    - testimoni klien ada?
+    - review dari client bisa diliat?
+    - kalian udah berpengalaman?
+    - sejak kapan berdiri?
+    - sudah handle berapa pasangan?
+    - spesialisasi kalian apa?
+    - keunggulan kalian apa?
+    - beda kalian dengan vendor lain?
+    - why choose you?
+    - apa yang bikin kalian beda?
+    - prewedding bali kenapa mahal?
+    - worth it ga prewedding di bali?
+    - recommend ga prewedding di bali?
+
 - intent: tanya_makna
   examples: |
     - kenapa harus pakai legenda?

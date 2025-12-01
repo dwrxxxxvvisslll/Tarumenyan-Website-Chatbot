@@ -22,6 +22,7 @@ intents:
   - pilih_tema_perjuangan
   - pilih_tema_romantis
   - tanya_makna
+  - tanya_prewedding_umum
 entities:
   - tema
   - lokasi
@@ -249,6 +250,43 @@ responses:
       payload: "/info_paket"
     - title: "Detail konsep"
       payload: "/lihat_detail_konsep"
+  utter_tanya_prewedding_umum:
+  - text: |-
+      ✨ TENTANG PREWEDDING LEGENDA BALI
+
+      Prewedding Legenda Bali adalah sesi foto prewedding yang mengangkat kisah cinta legendaris dari Bali sebagai konsep storytelling.
+
+      🌟 KEUNIKAN KAMI:
+      • Konsep berbasis cerita cinta klasik Bali (Jayaprana-Layonsari, Ratu Pantai Kuta, dll)
+      • Setiap foto punya makna mendalam, bukan sekedar pose
+      • Lokasi iconic Bali yang sesuai legenda
+      • Tim profesional berpengalaman 5+ tahun
+      • Hasil natural + cinematic
+
+      📸 YANG ANDA DAPATKAN:
+      • 50-150+ foto high resolution (tergantung paket)
+      • Video cinematic 2-5 menit
+      • Makeup & wardrobe assistance
+      • Multiple locations (1-3 lokasi)
+      • Editing premium
+      • Konsultasi tema gratis
+
+      ⏱️ DURASI: 4-10 jam (tergantung paket)
+      💰 HARGA: Mulai dari Rp 4.500.000
+
+      💡 KENAPA PILIH KAMI?
+      Kami bukan hanya memotret, tapi menceritakan kisah cinta Anda melalui lensa legenda Bali yang bermakna.
+
+      Mau tahu paket lengkap atau konsep yang cocok untuk Anda?
+    buttons:
+    - title: "Info paket & harga"
+      payload: "/info_paket"
+    - title: "Lihat konsep"
+      payload: "/info_konsep"
+    - title: "Analisis kisah kami"
+      payload: "/isi_kuesioner"
+    - title: "Booking"
+      payload: "/booking"
 forms:
   kuesioner_form:
     ignored_intents:
