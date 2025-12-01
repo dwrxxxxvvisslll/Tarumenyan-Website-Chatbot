@@ -23,6 +23,11 @@ intents:
   - pilih_tema_romantis
   - tanya_makna
   - tanya_prewedding_umum
+  - pujian
+  - kekhawatiran_budget
+  - tanya_pengalaman
+  - tanya_waktu
+  - tanya_teknis
 entities:
   - tema
   - lokasi
@@ -136,6 +141,36 @@ responses:
       payload: "/lihat_detail_konsep"
     - title: "Info paket"
       payload: "/info_paket"
+  - text: |-
+      Hai! 👋 Senang bisa kenalan sama calon pengantin!
+
+      Aku di sini untuk bantu kalian menemukan konsep prewedding yang ga cuma cantik, tapi juga punya makna mendalam dari legenda Bali.
+
+      Mau mulai dari mana nih?
+    buttons:
+    - title: "Cerita kisah kami dulu"
+      payload: "/isi_kuesioner"
+    - title: "Lihat konsep yang ada"
+      payload: "/info_konsep"
+    - title: "Info harga paket"
+      payload: "/info_paket"
+    - title: "Kisah cinta Bali"
+      payload: "/kisah_cinta_bali"
+  - text: |-
+      Halo lovebirds! 💕 Welcome to Prewedding Legenda Bali!
+
+      Di sini setiap foto punya cerita, setiap konsep punya makna. Aku siap bantu kalian menemukan tema yang pas dengan journey cinta kalian.
+
+      Yuk mulai dari:
+    buttons:
+    - title: "Aku mau rekomendasi tema"
+      payload: "/isi_kuesioner"
+    - title: "Pengen tau semua konsep"
+      payload: "/info_konsep"
+    - title: "Berapa sih harganya?"
+      payload: "/info_paket"
+    - title: "Tanya-tanya dulu"
+      payload: "/tanya_prewedding_umum"
   utter_ask_nama_pasangan:
   - text: 'Boleh tahu nama kalian berdua? (misal: Budi & Ani)'
   utter_ask_kisah_cinta:
@@ -155,6 +190,18 @@ responses:
       Terima kasih sudah berkonsultasi! 💕
 
       Om Shanti Shanti Shanti Om 🙏
+  - text: |-
+      Senang bisa bantu kalian! 😊
+
+      Semoga menemukan konsep yang sempurna untuk hari spesial kalian. Can't wait to capture your love story!
+
+      Om Shanti Shanti Shanti Om 🙏
+  - text: |-
+      Thanks udah mampir dan ngobrol sama aku! 💕
+
+      Kalau ada pertanyaan lagi atau udah ready booking, langsung aja hubungi ya!
+
+      Sampai jumpa lagi, lovebirds! 👋
   utter_info_konsep:
   - text: |-
       ✨ KONSEP PREWEDDING LEGENDA BALI ✨
@@ -287,6 +334,216 @@ responses:
       payload: "/isi_kuesioner"
     - title: "Booking"
       payload: "/booking"
+  utter_pujian:
+  - text: |-
+      Wah, terima kasih banyak! 🥰 Senang banget kalian suka konsep kami!
+
+      Kami percaya setiap pasangan punya cerita unik yang layak diabadikan dengan cara spesial. That's why we put our heart into every concept.
+
+      Ada yang mau ditanyakan lebih lanjut?
+  - text: |-
+      Aww thank you! 💕 Comments like this yang bikin kami semangat terus berinovasi!
+
+      Kalau kalian tertarik, yuk lanjut explore konsep yang cocok buat kalian!
+    buttons:
+    - title: "Mau rekomendasi tema"
+      payload: "/isi_kuesioner"
+    - title: "Lihat paket"
+      payload: "/info_paket"
+  - text: |-
+      Makasih ya! 😊 Kami memang berusaha membawa sesuatu yang berbeda - prewedding yang ga cuma cantik tapi juga meaningful.
+
+      Kalian udah ada konsep favorit atau mau aku bantu cariin yang pas?
+  utter_kekhawatiran_budget:
+  - text: |-
+      Totally understand! Budget adalah concern yang wajar kok. 💰
+
+      Kita punya paket mulai dari Rp 4.5jt (Basic Package) yang udah include 1 lokasi dan 50+ foto edited.
+
+      Yang penting: hasil tetap maksimal dan konsep tetap bermakna, apapun paketnya!
+
+      Mau aku jelasin detail tiap paket biar bisa compare?
+    buttons:
+    - title: "Iya, jelasin dong"
+      payload: "/info_paket"
+    - title: "Budget aku berapa ya..."
+      payload: "/isi_kuesioner"
+  - text: |-
+      No worries! Kami paham setiap couple punya budget planning yang berbeda. 😊
+
+      Good news: Kami punya 3 paket (Basic 4.5jt, Premium 8.5jt, Diamond 15jt) jadi ada pilihan yang bisa disesuaikan.
+
+      Plus, quality dan makna konsep tetap kami jaga di semua paket!
+
+      Kalau mau, bisa cerita budget range kalian berapa? Nanti aku kasih rekomendasi yang pas.
+  utter_tanya_pengalaman:
+  - text: |-
+      Great question! 📸 Kami udah beroperasi sejak 2019 dan sudah handle 150+ couple dari berbagai background.
+
+      TIM KAMI:
+      • Photographer bersertifikat dengan 5+ tahun pengalaman
+      • Makeup Artist profesional (portfolio di Instagram)
+      • Videographer untuk cinematic video
+      • Creative Director untuk konsep storytelling
+
+      PORTFOLIO: Bisa cek Instagram @tarumenyanbali atau website kami untuk lihat hasil karya dan testimoni client!
+
+      ACHIEVEMENTS:
+      • Featured di beberapa wedding magazine
+      • 4.9/5 rating dari 100+ reviews
+      • Repeat clients & referrals mencapai 40%
+
+      Mau lihat specific portfolio untuk tema tertentu?
+  - text: |-
+      Thanks for asking! Trust adalah hal penting dalam memilih vendor. 🤝
+
+      PENGALAMAN KAMI:
+      ✅ 5+ tahun di industri prewedding Bali
+      ✅ 150+ pasangan yang puas
+      ✅ Spesialisasi konsep storytelling legenda Bali
+      ✅ Tim profesional bersertifikat
+      ✅ Equipment profesional (Sony A7IV, Canon R5, drone DJI)
+
+      TESTIMONI: Rata-rata client bilang "konsepnya unik, timnya friendly, hasilnya beyond expectation!"
+
+      Portfolio lengkap bisa diliat di Instagram atau aku bisa kirim link portfolio PDF. Mau?
+    buttons:
+    - title: "Kirim portfolio dong"
+      payload: "/booking"
+    - title: "Lanjut lihat paket"
+      payload: "/info_paket"
+  utter_tanya_waktu:
+  - text: |-
+      Tentang waktu dan jadwal: ⏰
+
+      DURASI SESI:
+      • Basic: 4 jam
+      • Premium: 6 jam
+      • Diamond: 8-10 jam
+
+      AVAILABILITY:
+      • Weekend & weekday available
+      • Tanggal merah bisa (harga berbeda)
+      • Peak season: Juni-Agustus, Desember
+      • Best time: April-Mei, September-Oktober (cuaca stabil)
+
+      GOLDEN HOUR:
+      • Sunrise: 5:30-7:00 AM (best untuk pantai)
+      • Sunset: 5:30-6:30 PM (magic hour!)
+
+      HASIL FOTO:
+      • Sneak peek: 3-5 hari
+      • Full edited: 14-21 hari
+      • Rush editing: +Rp 1jt (7 hari)
+
+      RESCHEDULE/CANCEL:
+      • H-14 free reschedule
+      • H-7 kena charge 25%
+      • H-3 DP hangus (force majeure dikecualikan)
+
+      Mau cek availability untuk tanggal tertentu?
+  - text: |-
+      Let me break down timing untuk kalian: ⏱️
+
+      BOOKING TO SHOOT:
+      • Minimal H-30 dari hari H
+      • Recommended: 2-3 bulan sebelumnya (pilihan tanggal lebih banyak)
+
+      SAAT SESI FOTO:
+      • Datang 30 menit sebelum untuk makeup
+      • Shooting 4-10 jam (tergantung paket)
+      • Break untuk istirahat & makan included
+
+      AFTER SHOOT:
+      • Preview: 3-5 hari (pilih favorite photos)
+      • Full package: 14-21 hari
+      • Album cetak: +14 hari
+
+      CUACA:
+      • Kami monitor 3 hari sebelum
+      • Hujan ringan tetap jalan (punya backup plan)
+      • Force majeure: reschedule tanpa charge
+
+      Ada tanggal specific yang mau dicek ketersediaannya?
+    buttons:
+    - title: "Cek jadwal dong"
+      payload: "/booking"
+    - title: "Tanya lainnya dulu"
+      payload: "/tanya_prewedding_umum"
+  utter_tanya_teknis:
+  - text: |-
+      Technical details nih: 🎨
+
+      OUTFIT & STYLING:
+      • Wardrobe: 2-3 pasang outfit (bawa sendiri)
+      • Makeup: Include di Premium & Diamond
+      • Hair do: Include di Premium & Diamond
+      • Aksesoris: Beberapa props kami sediakan
+
+      FORMAT HASIL:
+      • High-res JPEG (RGB, 300 DPI)
+      • Resolusi: 6000x4000 pixels
+      • File mentah: +Rp 2jt (opsional)
+      • Album: 20x30cm premium linen
+
+      VIDEO:
+      • Cinematic video 2-5 menit (Premium & Diamond)
+      • Aerial drone shots available
+      • Background music licensed
+
+      EDITING:
+      • Natural with cinematic touch
+      • Color grading sesuai mood tema
+      • Retouching: skin smoothing, basic body retouch
+      • Background cleaning included
+      • Revision: 1x major revision free
+
+      CUSTOMIZATION:
+      • Konsep bisa disesuaikan
+      • Request pose OK
+      • Custom props boleh bawa
+      • Underwater/creative shot bisa request
+
+      Ada yang mau dikustomisasi?
+  - text: |-
+      Teknis & Detail Package: 🎬
+
+      EQUIPMENT:
+      • Camera: Sony A7IV, Canon R5
+      • Lenses: 24-70mm, 85mm, 50mm
+      • Drone: DJI Mini 3 Pro
+      • Lighting: Godox portable studio
+
+      TEAM:
+      • 1 main photographer
+      • 1 assistant photographer (Premium/Diamond)
+      • 1 videographer (Premium/Diamond)
+      • 1 MUA (Premium/Diamond)
+
+      EDITING STYLE:
+      • Natural light + cinematic
+      • Moody untuk tema Perjuangan
+      • Soft & dreamy untuk Romantis
+      • Vibrant untuk Perdamaian
+      • Custom preset per konsep
+
+      FILE DELIVERY:
+      • Google Drive link (lifetime access)
+      • USB Flashdisk cantik
+      • Album printed (Diamond package)
+
+      GUARANTEES:
+      • Backup photos di 2 storage
+      • Contract & invoice resmi
+      • Insurance covered
+      • Professional conduct
+
+      Questions lainnya?
+    buttons:
+    - title: "Udah clear, mau booking"
+      payload: "/booking"
+    - title: "Lihat paket dulu"
+      payload: "/info_paket"
 forms:
   kuesioner_form:
     ignored_intents:

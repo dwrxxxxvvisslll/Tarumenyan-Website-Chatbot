@@ -666,30 +666,45 @@ class ActionDetailKonsep(Action):
 ✨ KONSEP PREWEDDING LEGENDA BALI ✨
 
 Berikut adalah 6 konsep prewedding kami yang terinspirasi dari legenda dan cerita cinta Bali. Setiap konsep memiliki filosofi dan style unik:
+
+Klik salah satu tombol di bawah untuk melihat CERITA LENGKAP! 📖
 """
             dispatcher.utter_message(text=intro.strip())
 
             # Kirim overview singkat untuk semua konsep
             for key, concept in all_concepts.items():
+                # Truncate story dengan smart sentence boundary
+                story_preview = concept['story']
+                if len(story_preview) > 200:
+                    # Cari titik terakhir sebelum 200 karakter untuk memotong di kalimat
+                    last_period = story_preview[:200].rfind('. ')
+                    if last_period > 100:
+                        story_preview = story_preview[:last_period + 1]
+                    else:
+                        story_preview = story_preview[:200].strip()
+                    story_preview += "..."
+
                 short_message = f"""
 {concept['emoji']} {concept['title']}
 {concept['subtitle']}
 
-{concept['story'][:150]}...
+{story_preview}
 
 {concept['cocok_untuk']}
 """
                 dispatcher.utter_message(text=short_message.strip())
 
-            # Tampilkan buttons untuk pilih detail
+            # Tampilkan buttons untuk pilih detail - dengan payload yang set slot tema
             buttons = [
-                {"title": "Detail Ratu Pantai", "payload": "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"},
-                {"title": "Detail Putri Ayu", "payload": "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"},
-                {"title": "Detail Manik Angkeran", "payload": "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"},
-                {"title": "Detail Sri Jaya Pangus", "payload": "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"},
+                {"title": "📖 Cerita Lengkap: Ratu Pantai", "payload": "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"},
+                {"title": "📖 Cerita Lengkap: Putri Ayu", "payload": "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"},
+                {"title": "📖 Cerita Lengkap: Manik Angkeran", "payload": "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"},
+                {"title": "📖 Cerita Lengkap: Jayaprana", "payload": "/lihat_detail_konsep{\"tema\": \"jayaprana_layonsari\"}"},
+                {"title": "📖 Cerita Lengkap: Sri Jaya Pangus", "payload": "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"},
+                {"title": "📖 Cerita Lengkap: Ulun Danu", "payload": "/lihat_detail_konsep{\"tema\": \"ulun_danu\"}"},
             ]
 
-            footer_text = "\nPilih salah satu untuk melihat detail lengkap, atau ketik 'analisis kisah kami' untuk rekomendasi tema!"
+            footer_text = "\nAtau ketik 'analisis kisah kami' untuk rekomendasi tema berdasarkan cerita cinta kalian!"
             dispatcher.utter_message(text=footer_text, buttons=buttons)
 
             return []
@@ -710,7 +725,7 @@ class ActionJelaskanLegenda(Action):
         # Ambil teks mentah untuk deteksi berbasis substring (robust terhadap akurasi 0.85–0.90)
         raw_text = (getattr(tracker, "latest_message", {}) or {}).get("text", "").lower()
 
-        # Makna inti per tema (diperluas)
+        # Makna inti per tema (diperluas - semua 6 konsep legenda Bali)
         theme_explanations = {
             "ratu_pantai": (
                 "Legenda Ratu Pantai Kuta menggambarkan figur penjaga yang membawa kedamaian. "
@@ -724,6 +739,18 @@ class ActionJelaskanLegenda(Action):
             "manik_angkeran": (
                 "Manik Angkeran adalah kisah pengorbanan dan transformasi diri. "
                 "Tema ini ideal untuk pasangan yang tumbuh melalui tantangan—menguat lewat rintangan yang dihadapi bersama."
+            ),
+            "sri_jaya_pangus": (
+                "Sri Jaya Pangus & Kang Cing Wie adalah kisah akulturasi dan pengorbanan yang melahirkan tradisi. "
+                "Tema ini cocok untuk pasangan beda etnis/budaya yang ingin merayakan perpaduan tradisi dan saling menghormati."
+            ),
+            "ulun_danu": (
+                "Legenda Ulun Danu (Danau Beratan) berkisah tentang keseimbangan alam dan berkah kesuburan. "
+                "Tema ini menekankan harmoni, keseimbangan, penghormatan pada alam, dan spiritualitas."
+            ),
+            "jayaprana_layonsari": (
+                "Jayaprana & Layonsari menuturkan cinta tragis yang abadi sebagai simbol kemurnian dan kesetiaan. "
+                "Tema ini ideal untuk pasangan yang menekankan kesetiaan, komitmen mendalam, dan romansa timeless."
             ),
             # Tema tambahan (generic style)
             "fairytale": (
@@ -842,27 +869,26 @@ class ActionJelaskanLegenda(Action):
                 # fallback aman ke tema perdamaian
                 dispatcher.utter_message(text=theme_explanations["ratu_pantai"])
         else:
-            # Tidak ada deteksi: tampilkan makna untuk beberapa tema agar cakupan lebih luas
+            # Tidak ada deteksi: tampilkan SEMUA 6 konsep legenda Bali
             message = (
-                "📖 MAKNA INTI BERBAGAI TEMA:\n\n"
+                "📖 CERITA CINTA DARI SASTRA BALI\n\n"
+                "Kami memiliki 6 konsep prewedding yang terinspirasi dari legenda dan cerita cinta Bali:\n\n"
                 "🌊 Ratu Pantai Kuta — " + theme_explanations["ratu_pantai"] + "\n\n"
                 "💎 Putri Ayu Bali — " + theme_explanations["putri_ayu"] + "\n\n"
                 "🐉 Manik Angkeran — " + theme_explanations["manik_angkeran"] + "\n\n"
-                "🧚 Fairytale — " + theme_explanations["fairytale"] + "\n\n"
-                "📷 Vintage — " + theme_explanations["vintage"] + "\n\n"
-                "🏛️ Classic — " + theme_explanations["classic"] + "\n\n"
-                "🎨 Bohemian — " + theme_explanations["bohemian"] + "\n\n"
-                "✨ Soft — " + theme_explanations["soft"] + "\n\n"
-                "⚡ Dramatic — " + theme_explanations["dramatic"] + "\n\n"
-                "🤝 Unity — " + theme_explanations["unity"] + "\n\n"
-                "Mau lihat detail konsep atau minta rekomendasi dari kisah Anda?"
+                "🕊️ Sri Jaya Pangus & Kang Cing Wie — " + theme_explanations["sri_jaya_pangus"] + "\n\n"
+                "🌿 Ulun Danu Beratan — " + theme_explanations["ulun_danu"] + "\n\n"
+                "🌺 Jayaprana & Layonsari — " + theme_explanations["jayaprana_layonsari"] + "\n\n"
+                "Pilih salah satu untuk melihat detail lengkap!"
             )
 
             buttons = [
-                {"title": "Detail Ratu Pantai", "payload": "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"},
-                {"title": "Detail Putri Ayu", "payload": "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"},
-                {"title": "Detail Manik Angkeran", "payload": "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"},
-                {"title": "Minta rekomendasi tema", "payload": "/isi_kuesioner"},
+                {"title": "📖 Detail Ratu Pantai", "payload": "/lihat_detail_konsep{\"tema\": \"ratu_pantai\"}"},
+                {"title": "📖 Detail Putri Ayu", "payload": "/lihat_detail_konsep{\"tema\": \"putri_ayu\"}"},
+                {"title": "📖 Detail Manik Angkeran", "payload": "/lihat_detail_konsep{\"tema\": \"manik_angkeran\"}"},
+                {"title": "📖 Detail Sri Jaya Pangus", "payload": "/lihat_detail_konsep{\"tema\": \"sri_jaya_pangus\"}"},
+                {"title": "📖 Detail Ulun Danu", "payload": "/lihat_detail_konsep{\"tema\": \"ulun_danu\"}"},
+                {"title": "📖 Detail Jayaprana", "payload": "/lihat_detail_konsep{\"tema\": \"jayaprana_layonsari\"}"},
             ]
 
             dispatcher.utter_message(text=message, buttons=buttons)

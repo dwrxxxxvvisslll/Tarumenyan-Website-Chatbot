@@ -196,3 +196,45 @@ rules:
   steps:
   - intent: rekomendasi_dari_kisah
   - action: action_rekomendasi_dari_kisah
+
+# Handle pujian dengan response positif
+- rule: Respond to praise
+  steps:
+  - intent: pujian
+  - action: utter_pujian
+
+# Handle kekhawatiran budget
+- rule: Address budget concerns
+  steps:
+  - intent: kekhawatiran_budget
+  - action: utter_kekhawatiran_budget
+
+# Handle pertanyaan pengalaman
+- rule: Answer experience questions
+  steps:
+  - intent: tanya_pengalaman
+  - action: utter_tanya_pengalaman
+
+# Handle pertanyaan waktu
+- rule: Answer timing questions
+  steps:
+  - intent: tanya_waktu
+  - action: utter_tanya_waktu
+
+# Handle pertanyaan teknis
+- rule: Answer technical questions
+  steps:
+  - intent: tanya_teknis
+  - action: utter_tanya_teknis
+
+# Tanya prewedding umum
+- rule: Jawab pertanyaan prewedding umum
+  steps:
+  - intent: tanya_prewedding_umum
+  - action: utter_tanya_prewedding_umum
+
+# Say goodbye
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

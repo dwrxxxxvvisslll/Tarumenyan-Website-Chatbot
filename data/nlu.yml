@@ -182,6 +182,35 @@ nlu:
     - p
     - salam sejahtera
     - shalom
+    - heyy ada yang bisa bantu?
+    - halo kak, aku mau tanya dong
+    - permisi, boleh nanya?
+    - hi min, lagi available?
+    - halo! excited banget nih mau prewedding
+    - pagi kak! aku udah ga sabar nih
+    - hai! dengar kalian bagus banget
+    - halo, temen aku rekomendasiin kalian
+    - om swastyastu, saya lihat portfolio kalian keren
+    - hai bestie, boleh konsul ga?
+    - heyyy, gimana kabarnya?
+    - woy min haha boleh tanya-tanya ga
+    - halo ka, aku baru pertama kali nih
+    - hi! saya baru engaged dan excited banget
+    - permisi kak, saya dari instagram
+    - halo admin, mau konsultasi dong
+    - pagi! ready bantu aku ga?
+    - hai kak, lagi online ga?
+    - heyy aku dari google nemuin kalian
+    - om swastyastu! aku udah research lama nih
+    - halo kak, pacar aku suruh hubungin
+    - hi there! very interested with your concept
+    - haiii, ini yang viral itu kan?
+    - permisi kak, boleh ganggu sebentar?
+    - halo ka, tunggu lama ga balasnya?
+    - hai! friend of mine did prewedding with you
+    - selamat sore kak, masih buka kan?
+    - rahajeng semeng! saya orang bali juga nih
+    - halo kak, mau planning prewedding bulan depan
 
 - intent: goodbye
   examples: |
@@ -222,6 +251,27 @@ nlu:
     - sekian, terima kasih
     - selesai sampai sini
     - ya sudah, pamit
+    - oke thanks ya kak, sampai jumpa!
+    - makasih banyak! will contact you soon
+    - terima kasih infonya, nanti aku hubungi lagi
+    - thanks kak, aku pikir-pikir dulu ya
+    - sip mantap, nanti aku balik lagi
+    - oke noted semua, thanks ya!
+    - makasih udah bantuin, see you!
+    - perfect! terima kasih banyak kak
+    - thanks for your time! bye
+    - wah helpful banget, makasih ya
+    - oke deh, nanti aku discuss sama partner dulu
+    - noted kak, pamit dulu ya
+    - thank you so much! bye bye
+    - sip sip, udah jelas. dadah!
+    - makasih kak udah sabar jelasin
+    - okee terima kasih, sampai ketemu lagi
+    - bye kak! excited banget nih
+    - udah makin yakin nih, thanks!
+    - oke fix, makasih ya kak
+    - wah oke banget, nanti aku balik
+    - thanks for the info, see you soon
 
 - intent: affirm
   examples: |
@@ -1021,8 +1071,6 @@ nlu:
     - kalian sediain baju ga?
     - costume prewedding ada?
     - properti foto ada?
-    - boleh bawa properti sendiri?
-    - bisa request pose tertentu?
     - hasil fotonya berapa lama jadi?
     - dapet berapa foto?
     - foto digital atau cetak?
@@ -1093,11 +1141,9 @@ nlu:
     - mengapa penting ada makna?
     - kenapa maknanya relevan buat pasangan?
     - apa filosofi yang ditekankan?
-    - info konsep
-    - informasi konsep
-    - jelaskan konsep
-    - jelaskan tema
-    - ingin tahu konsep
+    - jelaskan konsep yang kalian punya
+    - jelaskan tema yang ada
+    - ingin tahu konsep yang lebih dalam
 - intent: booking
   examples: |
     - cara booking
@@ -1613,6 +1659,171 @@ nlu:
     - tolong jelaskan kisah [jayaprana layonsari](tema)
     - berikan makna legenda [ulun danu](tema)
     - makna dari legenda [ulun danu](tema) apa?
+
+- intent: pujian
+  examples: |
+    - wah keren banget konsepnya!
+    - bagus banget idenya
+    - ini unik banget ya
+    - keren portfolio kalian
+    - amazing concept!
+    - konsepnya brilliant
+    - suka banget sama idenya
+    - wow ini beda dari yang lain
+    - unik banget ga pasaran
+    - creative banget sih ini
+    - impressed sama konsepnya
+    - ga nyangka ada yang begini
+    - finally konsep yang beda
+    - ini yang aku cari-cari
+    - perfect banget ini
+    - exactly what i wanted
+    - this is so unique
+    - love the concept
+    - konsepnya deep banget
+    - meaningful banget ya
+    - beda banget sama vendor lain
+    - lebih berkelas ini
+    - profesional banget
+    - pelayanannya ramah
+    - fast response ya
+    - helpful banget kamu
+    - jelasinnya detail banget
+    - patient banget jelasinnya
+    - wah portfolio kalian aesthetic
+    - hasil fotonya bagus-bagus
+    - testimoni clientnya positif semua
+    - review kalian oke-oke
+    - recommended banget deh
+
+- intent: kekhawatiran_budget
+  examples: |
+    - waduh mahal ga ya?
+    - budget aku terbatas nih
+    - harganya affordable ga?
+    - ada yang lebih murah?
+    - bisa nego ga?
+    - diskon ada ga?
+    - pas ga di kantong nih
+    - takut over budget
+    - keluarga kasih budget terbatas
+    - apa bisa cicil?
+    - ada paket lebih ekonomis?
+    - budget minim gimana?
+    - 5 juta cukup ga ya?
+    - terlalu mahal buat kami
+    - ada promo ga sekarang?
+    - bisa kurangin harganya?
+    - takutnya ga mampu bayar
+    - apakah worth the price?
+    - kemahalan ga sih?
+    - competitor lebih murah loh
+    - bisa kasih special price?
+    - kalo budget dibawah 5 juta?
+    - pengen banget tapi budget pas-pasan
+    - nabung dulu kayaknya
+    - masih jauh dari budget kami
+    - harus potong pos lain nih
+
+- intent: tanya_pengalaman
+  examples: |
+    - udah handle berapa couple?
+    - pengalaman kalian berapa tahun?
+    - udah lama di bidang ini?
+    - portfolio lengkap ada?
+    - bisa liat hasil kerja sebelumnya?
+    - testimoni client ada ga?
+    - review dari pasangan lain?
+    - siapa aja yang udah prewed sama kalian?
+    - pernah handle pasangan international?
+    - pernah foto di lokasi ekstrem?
+    - tim kalian terdiri dari siapa aja?
+    - fotografernya siapa?
+    - photographer berpengalaman?
+    - MUA nya profesional ga?
+    - kalian vendor terpercaya kan?
+    - ada sertifikat atau penghargaan?
+    - pernah liputan di media?
+    - instagram kalian apa?
+    - bisa liat portfolio lengkap?
+    - case study ada ga?
+    - before after hasil foto?
+    - raw vs edited gimana bedanya?
+    - style fotografi kalian gimana?
+    - lebih ke candid atau posed?
+    - pakai equipment apa?
+    - kamera apa yang dipake?
+    - ada backup photographer?
+    - tim berapa orang?
+    - pernah prewed artis ga?
+    - klien terkenal siapa aja?
+
+- intent: tanya_waktu
+  examples: |
+    - berapa lama fotonya?
+    - durasinya berapa jam?
+    - butuh waktu berapa hari?
+    - jadwal gimana?
+    - available kapan?
+    - weekend bisa?
+    - weekday bisa ga?
+    - tanggal merah bisa?
+    - bulan depan available?
+    - desember masih ada slot?
+    - peak season kapan?
+    - low season kapan?
+    - best time untuk foto kapan?
+    - golden hour itu jam berapa?
+    - sunrise shot jam berapa mulai?
+    - sunset shot jam berapa?
+    - musim hujan gimana?
+    - kalo ujan ditunda?
+    - reschedule bisa ga?
+    - cancel bisa ga?
+    - dp hangus ga kalo cancel?
+    - h-berapa konfirmasi cuaca?
+    - berapa lama editing?
+    - kapan foto jadi?
+    - hasil foto ready kapan?
+    - revision berapa lama?
+    - deliver file berapa hari?
+    - rush order bisa?
+    - express editing ada?
+    - same day edit bisa ga?
+
+- intent: tanya_teknis
+  examples: |
+    - konsep bisa custom ga?
+    - bisa request pose tertentu?
+    - boleh bawa properti sendiri?
+    - outfit gimana?
+    - baju disediain?
+    - makeup include?
+    - hair do include?
+    - wardrobe berapa pasang?
+    - ganti baju berapa kali?
+    - aksesoris disediain?
+    - hasil foto format apa?
+    - dapet file raw ga?
+    - resolusi berapa?
+    - print size berapa?
+    - album include?
+    - album design gimana?
+    - video cinematic include?
+    - drone shot ada?
+    - underwater shot bisa?
+    - prewedding indoor bisa?
+    - studio ada?
+    - lighting gimana kalo outdoor?
+    - editing style gimana?
+    - preset warna apa?
+    - retouching detail ga?
+    - jerawat diilangin?
+    - body retouch?
+    - background diganti bisa?
+    - compositing bisa?
+    - revision unlimited?
+    - berapa kali revision?
 
 - lookup: tema
   examples: |
